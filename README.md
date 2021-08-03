@@ -1,104 +1,158 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 style="text-align: center">The Barbell Planner</h1>
 
-Welcome USER_NAME,
+![hero image screenshot]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+This is my submission for Milestone project 3. The Barbell Planner is a fitness based application allowing the user
+to log a specific kind of workout. The user will be able to authenticate themself, log a workout, and then Edit or Delete
+that workout from the list they have created. The application will also allow them to navigate to the Barbell gym site
+and Social Media channels.
 
-## Gitpod Reminders
+Live project: []
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User Experience (UX) ###
 
-`python3 -m http.server`
+* User Story 1 - As a user, I land on the dashboard and it is clear what the site is and it's purpose.
+* User Story 2  - As a user, I can easily navigate through the dashboard.
+* User Story 3 - As a user, there is a clear call to action to login.
+* User Story 4 - As a user, given I havn't registered, there is a clear option for me to register as a user of the planner.
+* User Story 5 - As a user I can access the business social media channels from anywhere on the site.
+* User Story 6 - As an admin, I can limit the the navigation options presented to the user if they have not yet logged in.
+* User Story 7 - As a new user, I can navigate to the registration page easily
+* User Story 8 - As a user, There is a clear call to action on what details I must input into the registration fields
+* User Story 9 - As a user, I can see if I have successfully registered
+* User Story 10 - As a user, I am informed if I have entered invalid data into a field
+* User Story 11 - As an admin, I can see the successfully registered username and encoded password in the database
+* User Story 12 - As a user, given I have logged in, I can see a navigation bar giving me clear options that are not present to me when i'm logged out
+* User Story 13 - As a user, I can see a clear call to action to log a workout when I have logged in
+* User Story 14 - As a user, given I have logged in, I can logout at any point in the site
+* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout
+* User Story 16 - As a user when I select 'Weight' workout, I am asked for the name, reps and weight used in my workout and the date
+* User Story 17 - As a user, When I select 'Cardio', I am asked for the exercise name, duration and date.
+* User Story 18 - As a user when I click on 'Log Workout' the workout then shows on the 'My Workout section of the site.
+* User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged.
+* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created. 
 
-A blue button should appear to click: _Make Public_,
+### Design ###
 
-Another blue button should appear to click: _Open Browser_.
+* Colour scheme - The colour scheme is dark blue and white which matches with the imagery on the site
+and helps towards a sleek, 'space-age' modern aesthetic.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* Typography - the 'Teko' font is used as it is bold, easy to read and suits the hero/comicbook feel and
+aesthetic of the site.
 
-A blue button should appear to click: _Make Public_,
+* Imagery - The hero image is the logo for the Justice League. background imagery was chosen to convey a futuristic
+aesthetic and a setting in space. Images were used to display the characters mentioned throughout the site.
 
-Another blue button should appear to click: _Open Browser_.
+* WireFrames:
+Desktop and Mobile wireframes - https://marvelapp.com/prototype/9ihcaij
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Features:
+Responsive layout on mobile and tablet. Interactive Maps, email and card-flip functionality.
 
-To log into the Heroku toolbelt CLI:
+### Technologies: ###
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* Languages - 
+HTML5
+CSS3
+JS
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Frameworks/libraries/programs - 
+  https://favicon.io/favicon-converter/ - Used to create logo for title.
 
-------
+  https://www.rawpixel.com - Used for background image.
 
-## Release History
+  https://fonts.google.com/ - used for font design.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  Bootstrap 4.3.1 - https://getbootstrap.com/docs/4.3/getting-started/introduction/ - used to help with responsiveness
+  of the site, button functionality
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  Free formatter - https://www.freeformatter.com/css-beautifier.html used to beautify CSS3 code
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  https://blog.hubspot.com/website/css-fade-in for Fade in animation.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<h2 style="text-align: center">Testing</h2>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The W3C Markup Validator, W3C CSS and JSHint Validator Services were used to validate the project pages to ensure
+there were no syntax errors.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* [W3C Markup validator](https://validator.w3.org/#validate_by_input)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* [JSHint](https://jshint.com/)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Testing user stories ###
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Further testing ###
+     
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Bugs:
+     The navigation links do not render correctly on Iphone 5 screen:
+     ![hero image screenshot](assets/images/screenshots/user_story_12.JPG)
+     Resolved: No, Iphone 5 is now an old model and the navigation renders correctly on all Iphone models in
+     the last 5 years. 
+     Future fix may include a collapsable nav bar that lends itself to smaller screens.
 
-------
 
-## FAQ about the uptime script
+* Potential enhancements:
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<h2 style="text-align: center">Deployment</h2>
 
-**How will this affect me?**
+### GitHub Pages ###
+The project was deployed to GitHub Pages using the following steps...
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Log in to GitHub and locate the GitHub Repository ####
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* At the top of the repository section, locate the "Settings" Button on the menu.
+* Scroll down the settings page until you find the "GitHub Pages" section.
+* You will see a message "Pages settings now has its own dedicated tab! Check it out here!" click on the link.
+* Under "Source", click the dropdown and select "Master Branch".The page will refresh.
+* The now published site link in the "GitHub Pages" section will be found at the top of the page.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Forking the GitHub Repository ###
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-**So….?**
+#### Log in to GitHub and locate the GitHub Repository ####
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* At the top of the repository section just above the "Settings" button on the menu, click the "Fork" button.
+  The original repository in your GitHub account should now have duplicated.
 
-**Can I opt out?**
+#### Making a Local Clone ####
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* Log in to GitHub and locate the GitHub repository, under the repository name, click "clone or download".
+* To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+* Open Git Bash
+* Change the current working directory to the location where you want the cloned directory to be made.
+* Type git clone, and then paste the URL you copied in Step 2.
+   * $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+* Press Enter. Your local clone will be created.
+   * $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<h2 style="text-align: center">Credits</h2>
 
-**Anything more?**
+### Code ###
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+w3Schools.com to help with some of the syntax of the Js.
 
----
+Email.js for the contact us email functionality.
 
-Happy coding!
+### Content ###
+
+All typed content was written by the developer.
+
+### Media ###
+
+#### Image credits ####
+
+### Acknowledgements ###
+Thanks to Aaron my mentor, for advice on my project and the Code Institute Slack community.
