@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbell Planner</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+
     {% for workout in workouts %}
         {{ workout.workout_name }}<br>
         {{ workout.exercise_type }}<br>
@@ -17,5 +12,5 @@
         {{ workout.duration }}<br>
         {{ workout.date }}<br>
     {% endfor %}
-</body>
-</html>
+    
+{% endblock %}

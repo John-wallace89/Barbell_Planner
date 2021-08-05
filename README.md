@@ -44,7 +44,7 @@ aesthetic of the site.
 aesthetic and a setting in space. Images were used to display the characters mentioned throughout the site.
 
 * WireFrames:
-Desktop and Mobile wireframes - https://marvelapp.com/prototype/9ihcaij
+Desktop and Mobile wireframes - https://marvelapp.com/prototype/5d24b2d
 
 * Features:
 Responsive layout on mobile and tablet. Interactive Maps, email and card-flip functionality.
@@ -63,8 +63,8 @@ JS
 
   https://fonts.google.com/ - used for font design.
 
-  Bootstrap 4.3.1 - https://getbootstrap.com/docs/4.3/getting-started/introduction/ - used to help with responsiveness
-  of the site, button functionality
+  Materialize CSS - https://materializecss.com/ Used for responsiveness and design of site,
+  used to implement responsive header, footer and collapsible menu
 
   Free formatter - https://www.freeformatter.com/css-beautifier.html used to beautify CSS3 code
 
