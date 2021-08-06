@@ -3,3 +3,14 @@
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
 }
+
+.content-title {
+    font-family: 'Big Shoulders Stencil Text', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+i {
+    color: #fafafa;
+    margin: 2px;
+}
