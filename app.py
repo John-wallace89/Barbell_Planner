@@ -20,8 +20,6 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_workouts")
-
-
 def get_workouts():
     workouts = mongo.db.workouts.find()
     return render_template("my_workouts.html", workouts=workouts)
@@ -66,7 +64,7 @@ def login():
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
-                return redirect (url_for("login"))
+                return redirect(url_for("login"))
 
         else:
             # username doesn't exist
@@ -80,4 +78,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True)
-
