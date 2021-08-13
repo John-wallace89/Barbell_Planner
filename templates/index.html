@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    {% for workout in workouts %}
+        {{ workout.workout_name }}<br>
+        {{ workout.exercise_type }}<br>
+        {{ workout.exercise_name1 }}<br>
+        {{ workout.sets1 }}<br>
+        {{ workout.reps1 }}<br>
+        {{ workout.weight }}<br>
+        {{ workout.duration }}<br>
+        {{ workout.date }}<br>
+    {% endfor %}
+    
+{% endblock %}

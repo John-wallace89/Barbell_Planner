@@ -1,16 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel blue-grey darken-1">
+            <h3 class="center-align content-txt">{{ username }}'s Workouts</h3>
+        </div>
+    </div>
+</div>
 
-    {% for workout in workouts %}
-        {{ workout.workout_name }}<br>
-        {{ workout.exercise_type }}<br>
-        {{ workout.exercise_name1 }}<br>
-        {{ workout.sets1 }}<br>
-        {{ workout.reps1 }}<br>
-        {{ workout.weight }}<br>
-        {{ workout.duration }}<br>
-        {{ workout.date }}<br>
-    {% endfor %}
-    
 {% endblock %}

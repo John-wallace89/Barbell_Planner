@@ -22,9 +22,9 @@ mongo = PyMongo(app)
 @app.route("/get_workouts")
 def get_workouts():
     workouts = mongo.db.workouts.find()
-    return render_template("my_workouts.html", workouts=workouts)
+    return render_template("index.html", workouts=workouts)
 
-
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -44,10 +44,12 @@ def register():
         # put new user in 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome to the Pack!")
+        return redirect(url_for(
+            "my_workouts", username=session["user"]))
     
     return render_template("register.html")
 
-
+# Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -60,7 +62,10 @@ def login():
             if check_password_hash(
                     existing_member["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "my_workouts", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -72,6 +77,15 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/my_workouts/<username>", methods=["GET", "POST"])
+def my_workouts(username):
+    # grab member username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("my_workouts.html", username=username)
+
 
 
 if __name__ == "__main__":
