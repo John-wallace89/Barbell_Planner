@@ -24,6 +24,7 @@ def get_workouts():
     workouts = mongo.db.workouts.find()
     return render_template("index.html", workouts=workouts)
 
+
 # Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -49,6 +50,7 @@ def register():
     
     return render_template("register.html")
 
+
 # Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -61,8 +63,8 @@ def login():
             # ensure password matched username
             if check_password_hash(
                     existing_member["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
                         "my_workouts", username=session["user"]))
@@ -77,6 +79,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
 
 # User profile
 @app.route("/my_workouts/<username>", methods=["GET", "POST"])
@@ -98,7 +101,6 @@ def logout():
     flash("You've been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
 
 
 if __name__ == "__main__":
