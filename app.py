@@ -78,13 +78,26 @@ def login():
 
     return render_template("login.html")
 
-
+# User profile
 @app.route("/my_workouts/<username>", methods=["GET", "POST"])
 def my_workouts(username):
     # grab member username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("my_workouts.html", username=username)
+    
+    if session["user"]:
+        return render_template("my_workouts.html", username=username)
+    
+    return redirect(url_for("login"))
+
+
+# Logout
+@app.route("/logout")
+def logout():
+    # remove user from session
+    flash("You've been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 

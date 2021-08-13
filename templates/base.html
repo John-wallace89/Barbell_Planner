@@ -31,7 +31,7 @@
                     <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
                     <li><a href="#">Log Workout</a></li>
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="#">Log Out</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
             <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
             <li><a href="#">Log Workout</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
     </header>
