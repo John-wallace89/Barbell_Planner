@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_workouts")
 def get_workouts():
-    workouts = mongo.db.workouts.find()
+    workouts = list(mongo.db.workouts.find())
     return render_template("index.html", workouts=workouts)
 
 
@@ -67,7 +67,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "my_workouts", username=session["user"]))
+                        "my_workouts", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
