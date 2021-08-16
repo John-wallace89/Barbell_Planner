@@ -62,12 +62,12 @@ def login():
         if existing_member:
             # ensure password matched username
             if check_password_hash(
-                    existing_member["password"], request.form.get("password")):
+                existing_member["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "my_workouts", username=session["user"]))
+                            request.form.get("username")))
+                        return redirect(url_for(
+                            "my_workouts", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
