@@ -30,7 +30,7 @@
                     <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                        <li><a href="#">Log Workout</a></li>
+                        <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -45,7 +45,7 @@
             <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                <li><a href="#">Log Workout</a></li>
+                <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
