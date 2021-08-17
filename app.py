@@ -106,7 +106,8 @@ def logout():
 # Log workout
 @app.route("/log_workout")
 def log_workout():
-    return render_template("log_workout.html")
+    exercises = mongo.db.exercises.find().sort("exercise_type", 1)
+    return render_template("log_workout.html", exercises=exercises)
 
 
 

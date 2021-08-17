@@ -6,6 +6,17 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
+                <select id="exercise_type" name="exercise_type" class="validate" required>
+                    <option value="" disabled selected>Choose workout type</option>
+                    {% for exercise in exercises %}
+                        <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                    {% endfor %}
+                </select>
+                <label for="exercise_type">Workout Type</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="fas fa-dumbbell prefix"></i>
                 <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text" class="validate"
                     required>

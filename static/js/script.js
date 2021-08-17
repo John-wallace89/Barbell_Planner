@@ -13,6 +13,11 @@ $(document).ready(function(){
   $('.tooltipped').tooltip();
 });
 
+// select dropdown
+$(document).ready(function(){
+  $('select').formSelect();
+});
+
 //datepicker
 $(document).ready(function(){
   $('.datepicker').datepicker({
