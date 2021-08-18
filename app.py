@@ -104,8 +104,24 @@ def logout():
 
 
 # Log workout
-@app.route("/log_workout")
+@app.route("/log_workout", methods=["GET", "POST"])
 def log_workout():
+    if request.method == "POST":
+        workout = {
+            "exercise_type": request.form.get("exercise_type"),
+            "workout_name": request.form.get("workout_name"),
+            "date": request.form.get("date"),
+            "exercise_name": request.form.get("exercise_name"),
+            "sets1": request.form.get("sets1"),
+            "reps1": request.form.get("reps1"),
+            "weight": request.form.get("weight"),
+            "duration": request.form.get("duration"),
+            "created_by": session["user"]
+        }
+        mongo.db.workouts.insert_one(workout)
+        flash("Nice work, Workout Successfully Logged")
+        return redirect (url_for("get_workouts"))
+
     exercises = mongo.db.exercises.find().sort("exercise_type", 1)
     return render_template("log_workout.html", exercises=exercises)
 

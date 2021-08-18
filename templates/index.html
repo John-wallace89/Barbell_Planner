@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="center-align content-title">Barbell Workouts</h3>
+
 <ul class="collapsible content-txt">
     {% for workout in workouts %}
     <li>
@@ -17,6 +19,7 @@
                 Weight: {{ workout.weight }}<br>
                 Duration: {{ workout.duration }}<br>
             </p>
+            <p><em>Logged by: {{ workout.created_by }}</em></p>
         </div>
     </li>
     {% endfor %}
