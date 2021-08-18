@@ -47,7 +47,7 @@ def register():
         flash("Welcome to the Pack!")
         return redirect(url_for(
             "my_workouts", username=session["user"]))
-    
+
     return render_template("register.html")
 
 
@@ -58,15 +58,15 @@ def login():
         # check username exists
         existing_member = mongo.db.users.find_one(
             {'username': request.form.get("username").lower()})
-        
+
         if existing_member:
             # ensure password matched username
             if check_password_hash(
                 existing_member["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
                         "my_workouts", username=session["user"]))
             else:
                 # invalid password match
@@ -87,10 +87,10 @@ def my_workouts(username):
     # grab member username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("my_workouts.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
@@ -120,14 +120,13 @@ def log_workout():
         }
         mongo.db.workouts.insert_one(workout)
         flash("Nice work, Workout Successfully Logged")
-        return redirect (url_for("get_workouts"))
+        return redirect(url_for("get_workouts"))
 
     exercises = mongo.db.exercises.find().sort("exercise_type", 1)
     return render_template("log_workout.html", exercises=exercises)
 
 
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-        port=int(os.environ.get("PORT")),
-        debug=True)
+            port=int(os.environ.get("PORT")),
+            debug=True)
