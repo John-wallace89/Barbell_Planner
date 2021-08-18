@@ -23,33 +23,35 @@
         <nav class="content-txt grey darken-4">
             <!--top nav bar - desktop -->
             <div class="nav-wrapper">
-                <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo" style="max-height: 150px; max-width: 150px; text-align: center;">
+                <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo"
+                    style="max-height: 150px; max-width: 150px; text-align: center;">
                 <a href="#!" class="brand-logo">Barbell Planner</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                        <li><a href="#">Log Workout</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+                    <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
         <!--Mob nav bar-->
         <ul class="sidenav" id="mobile-demo">
-            <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo" style="max-height: 200px; max-width: 200px; text-align: center;">
+            <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo"
+                style="max-height: 200px; max-width: 200px; text-align: center;">
             <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                <li><a href="#">Log Workout</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+            <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -57,15 +59,15 @@
     <section>
         <!--flash messages-->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row msgs-txt">
-                        <div class="col s12 m8 offset-m2">
-                            <h4>{{ message }}</h4>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row msgs-txt">
+            <div class="col s12 m8 offset-m2">
+                <h4>{{ message }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
     <main class="container">

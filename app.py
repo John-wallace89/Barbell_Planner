@@ -103,6 +103,14 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Log workout
+@app.route("/log_workout")
+def log_workout():
+    exercises = mongo.db.exercises.find().sort("exercise_type", 1)
+    return render_template("log_workout.html", exercises=exercises)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
