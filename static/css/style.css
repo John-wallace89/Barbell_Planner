@@ -13,7 +13,6 @@
 
 i {
     color: #fafafa;
-    margin-bottom: 5px;
     
 }
 
@@ -26,3 +25,11 @@ i {
     line-height: 2;
     text-transform: capitalize;
 };
+
+.btn-small {
+    margin: 5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+}
