@@ -9,8 +9,12 @@
         <div class="collapsible-header blue-grey darken-1">
             <div class="col s3">
                 <i class="fas fa-angle-down"></i>
-                <a href="{{ url_for('edit_workout', workout_id=workout._id) }}"
+                {% if session.user|lower == workout.created_by|lower %}
+                    <a href="{{ url_for('edit_workout', workout_id=workout._id) }}"
                     class="btn-small yellow accent-4 black-text">Edit</a>
+                    <a href="#"
+                    class="btn-small red accent-4 white-text">Delete</a>
+                {% endif %}
             </div>
             <strong>{{ workout.workout_name }}</strong> : {{ workout.date }}
         </div>
