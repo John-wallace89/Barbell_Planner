@@ -23,7 +23,11 @@
                 <select id="exercise_type" name="exercise_type" class="validate" required>
                     <option value="" disabled selected>Choose workout type</option>
                     {% for exercise in exercises %}
-                        <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                        {% if exercise.exercise_type == workout.exercise_type %}
+                            <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>
+                        {% else %}
+                            <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="exercise_type">Workout Type</label>
@@ -34,7 +38,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-dumbbell prefix"></i>
                 <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
+                    value="{{ workout.workout_name }}" required>
                 <label for="workout_name">Workout Name</label>
             </div>
         </div>
@@ -43,7 +47,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix"></i>
                 <input id="date" name="date" minlength="5" maxlength="50" type="text" class="datepicker validate"
-                    required>
+                    value="{{ workout.date }}" required>
                 <label for="date">Date</label>
             </div>
         </div>
@@ -52,7 +56,7 @@
             <div class="col s2">
                 <div class="input-field inline">
                     <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
-                        class="validate" required>
+                        class="validate" value="{{ workout.exercise_name }}" required>
                     <label for="exercise_name">Exercise name</label>
                 </div>
                 <i class="far fa-question-circle btn black-text text-lighten-2 tooltipped" data-position="right"
@@ -61,28 +65,28 @@
             <div class="col s2">
                 <div class="input-field inline">
                     <input id="sets1" name="sets1" type="text" minlength="5" maxlength="25"
-                        class="validate">
+                        value="{{ workout.sets1 }}" class="validate">
                     <label for="sets1">Sets</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
                     <input id="reps1" name="reps1" type="text" minlength="5" maxlength="25"
-                        class="validate">
+                       value="{{ workout.reps1 }}" class="validate">
                     <label for="reps1">Reps</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
                     <input id="weight" name="weight" type="text" minlength="5" maxlength="25"
-                        class="validate">
+                       value="{{ workout.weight }}" class="validate">
                     <label for="weight">Weight</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
                     <input id="duration" name="duration" type="text" minlength="5" maxlength="25"
-                        class="validate">
+                       value="{{ workout.duration }}" class="validate">
                     <label for="duration">Duration</label>
                 </div>
             </div>
@@ -90,6 +94,7 @@
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
+                <a href="{{ url_for ('get_workouts') }}" class="btn-large red content-txt">Cancel<i class="fas fa-times-circle right"></i></a>
                 <button type="submit" class="btn-large blue-grey darken-1 content-txt">
                     Edit Workout <i class ="fas fa-edit right"></i>
                 </button>
