@@ -150,6 +150,13 @@ def edit_workout(workout_id):
     return render_template("edit_workout.html", workout=workout, exercises=exercises)
 
 
+# delete workout
+@app.route("/delete_workout/<workout_id>")
+def delete_workout(workout_id):
+    mongo.db.workouts.remove({"_id": ObjectId(workout_id)})
+    flash("Workout Deleted")
+    return redirect(url_for("get_workouts"))
+
 
 
 if __name__ == "__main__":
