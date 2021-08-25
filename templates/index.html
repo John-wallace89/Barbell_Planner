@@ -21,6 +21,7 @@
     </form>
 </div>
 
+{% if workouts|length > 0 %}
 <ul class="collapsible content-txt">
     {% for workout in workouts %}
     <li>
@@ -52,5 +53,8 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
+    <h3 class="center-align content-title red-text">No workouts Found</h3>
+{% endif %}
 
 {% endblock %}
