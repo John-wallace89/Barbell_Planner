@@ -3,6 +3,24 @@
 
 <h3 class="center-align content-title">Barbell Workouts</h3>
 
+<div class="row card-panel grey lighten-5">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="row valign-wrappers center-align">
+            <div class="input-field col s12 m8">
+                <i class="fas fa-search prefix black-text"></i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Find Workouts</label>
+            </div>
+            <div class="col s12 m4">
+                <a href="{{ url_for('get_workouts') }}" class="red btn content-txt">Reset</a>
+                <button type="submit" class="light-blue darken-4 btn content-txt">
+                    <i class="fas fa-search left"></i> Search
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
 <ul class="collapsible content-txt">
     {% for workout in workouts %}
     <li>

@@ -25,6 +25,15 @@ def get_workouts():
     return render_template("index.html", workouts=workouts)
 
 
+
+# search
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    workouts = list(mongo.db.workouts.find({"$text": {"$search: query"}}))
+    return render_template("index.html", workouts=workouts)
+
+
 # Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -144,10 +153,11 @@ def edit_workout(workout_id):
         mongo.db.workouts.update({"_id": ObjectId(workout_id)}, submit)
         flash("Workout Updated")
         return redirect(url_for("get_workouts"))
-    
+
     workout = mongo.db.workouts.find_one({"_id": ObjectId(workout_id)})
     exercises = mongo.db.exercises.find().sort("exercise_type", 1)
-    return render_template("edit_workout.html", workout=workout, exercises=exercises)
+    return render_template(
+        "edit_workout.html", workout=workout, exercises=exercises)
 
 
 # delete workout
@@ -156,7 +166,6 @@ def delete_workout(workout_id):
     mongo.db.workouts.remove({"_id": ObjectId(workout_id)})
     flash("Workout Deleted")
     return redirect(url_for("get_workouts"))
-
 
 
 if __name__ == "__main__":
