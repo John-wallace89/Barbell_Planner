@@ -13,7 +13,7 @@
 
 i {
     color: #fafafa;
-    
+
 }
 
 .msgs-txt {
@@ -24,7 +24,9 @@ i {
     text-align: center;
     line-height: 2;
     text-transform: capitalize;
-};
+}
+
+;
 
 .btn-small {
     margin: 5px;
@@ -32,4 +34,23 @@ i {
 
 .collapsible-header .col strong {
     margin: 5px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    padding: 0;
+    max-height: 300px;
+}
+
+.social-links a {
+    font-size: 20px;
 }

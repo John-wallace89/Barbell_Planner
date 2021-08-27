@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_workouts")
 def get_workouts():
     workouts = list(mongo.db.workouts.find())
-    return render_template("index.html", workouts=workouts)
+    return render_template("my_workouts.html", workouts=workouts)
 
 
 # search
@@ -30,7 +30,7 @@ def get_workouts():
 def search():
     query = request.form.get("query")
     workouts = list(mongo.db.workouts.find({"$text": {"$search": query}}))
-    return render_template("index.html", workouts=workouts)
+    return render_template("my_workouts.html", workouts=workouts)
 
 
 # Register

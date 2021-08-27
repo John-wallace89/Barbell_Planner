@@ -24,15 +24,15 @@
             <!--top nav bar - desktop -->
             <div class="nav-wrapper">
                 <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo"
-                    style="max-height: 150px; max-width: 150px; text-align: center;">
-                <a href="#!" class="brand-logo">Barbell Planner</a>
+                    style="max-height: 70px; max-width: 75px; text-align: center;">
+                <a href="#!" class="brand-logo center-align">Barbell Planner</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                        <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+                    <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -46,9 +46,9 @@
                 style="max-height: 200px; max-width: 200px; text-align: center;">
             <li><a href="{{ url_for('get_workouts') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+            <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -74,6 +74,23 @@
         {% block content %}
         {% endblock %}
     </main>
+    <footer class="page-footer black content-txt">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align social-links">
+                    <h4 class="white-text">Social Links</h4>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/the_barbell_gym/?hl=en"
+                                target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/GavinSmithFit/"
+                                target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/barbell.gear/?hl=en-gb"
+                                target="_blank"><i class="fas fa-dumbbell"></i> Barbell Gear</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
