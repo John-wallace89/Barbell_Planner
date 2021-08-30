@@ -18,14 +18,50 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home
+@app.route("/Home")
+def home():
+    return render_template('index.html')
+
+
+# Login
 @app.route("/")
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check username exists
+        existing_member = mongo.db.users.find_one(
+            {'username': request.form.get("username").lower()})
+
+        if existing_member:
+            # ensure password matched username
+            if check_password_hash(
+                existing_member["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "home", username=session["user"]))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
 @app.route("/get_workouts")
 def get_workouts():
     workouts = list(mongo.db.workouts.find())
     return render_template("my_workouts.html", workouts=workouts)
 
 
-# search
+# Search
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -57,36 +93,6 @@ def register():
             "my_workouts", username=session["user"]))
 
     return render_template("register.html")
-
-
-# Login
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        # check username exists
-        existing_member = mongo.db.users.find_one(
-            {'username': request.form.get("username").lower()})
-
-        if existing_member:
-            # ensure password matched username
-            if check_password_hash(
-                existing_member["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "my_workouts", username=session["user"]))
-            else:
-                # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
-
-        else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-
-    return render_template("login.html")
 
 
 # User profile
