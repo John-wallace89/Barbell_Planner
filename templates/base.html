@@ -23,14 +23,14 @@
         <nav class="content-txt grey darken-4">
             <!--top nav bar - desktop -->
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo center-align">
-                    <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo"
-                        style="max-height: 70px; max-width: 75px; text-align: center;">Barbell Planner</a>
-                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('home')}}" class="brand-logo center-align">
+                    <img src="{{ url_for('static', filename='/images/barbell_logo.jpeg') }}" alt="Barbell Logo"
+                    style="max-height: 70px; max-width: 75px; text-align: center;">Barbell Planner</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
                     <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
@@ -42,11 +42,11 @@
         </nav>
         <!--Mob nav bar-->
         <ul class="sidenav" id="mobile-demo">
-            <img src="static/images/barbell_logo.jpeg" alt="Barbell Logo"
+            <img src="{{ url_for('static', filename='images/barbell_logo.jpeg') }}" alt="Barbell Logo"
                 style="max-height: 200px; max-width: 200px; text-align: center;">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('my_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
             <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}

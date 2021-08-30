@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 # Home
-@app.route("/Home")
+@app.route("/home")
 def home():
     return render_template('index.html')
 
@@ -58,7 +58,7 @@ def login():
 @app.route("/get_workouts")
 def get_workouts():
     workouts = list(mongo.db.workouts.find())
-    return render_template("my_workouts.html", workouts=workouts)
+    return render_template("barbell_workouts.html", workouts=workouts)
 
 
 # Search
@@ -66,7 +66,7 @@ def get_workouts():
 def search():
     query = request.form.get("query")
     workouts = list(mongo.db.workouts.find({"$text": {"$search": query}}))
-    return render_template("my_workouts.html", workouts=workouts)
+    return render_template("barbell_workouts.html", workouts=workouts)
 
 
 # Register
@@ -90,20 +90,20 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Welcome to the Pack!")
         return redirect(url_for(
-            "my_workouts", username=session["user"]))
+            "home", username=session["user"]))
 
     return render_template("register.html")
 
 
 # User profile
-@app.route("/my_workouts/<username>", methods=["GET", "POST"])
+@app.route("/_workouts/<username>", methods=["GET", "POST"])
 def my_workouts(username):
     # grab member username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("my_workouts.html", username=username)
+        return render_template("barbell_workouts.html", username=username)
 
     return redirect(url_for("login"))
 
