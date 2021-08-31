@@ -2,6 +2,7 @@
 
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
+    color: #fafafa;
 }
 
 .content-title {
@@ -9,6 +10,7 @@
     font-weight: 500;
     text-transform: capitalize;
     text-align: center;
+    color: #fafafa;
 }
 
 i {
@@ -51,6 +53,26 @@ main {
     max-height: 300px;
 }
 
-.social-links a {
-    font-size: 20px;
+.social-links {
+    font-size: 25px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.social-links i {
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.20s ease-in-out;
+    -webkit-transition: all 0.20s ease-in-out;
+    -moz-transition: all 0.20s ease-in-out;
+    -o-transition: all 0.20s ease-in-out;
+}
+
+.social-links i:hover {
+    transform: scale(1.25);
+    color: #fafafa;
 }
