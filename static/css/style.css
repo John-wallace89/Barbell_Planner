@@ -9,9 +9,18 @@ html {
     background-size: cover;
 }
 
+.home{
+    background: url("../images/bb_beast_2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
     color: #fafafa;
+    font-size: 25px;
 }
 
 .content-title {
@@ -53,6 +62,13 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+.workout-data p{
+    display: inline-block;
+    padding: 1rem;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
 .page-footer {

@@ -48,45 +48,46 @@
             </div>
         </div>
         <!--Exercise name-->
-        <div class="row">
-            <div class="col s2">
-                <div class="input-field inline">
+        <div class="row" id="exercises">
+            <div class="col s3">
+                <div class="input-field inline exerciseField">
                     <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
                         class="validate" required>
                     <label for="exercise_name">Exercise name</label>
                 </div>
-                <i class="far fa-question-circle btn black-text text-lighten-2 tooltipped" data-position="right"
-                    data-tooltip="e.g. Bench Press"></i>
             </div>
             <div class="col s2">
-                <div class="input-field inline">
+                <div class="input-field inline exerciseField">
                     <input id="sets1" name="sets1" type="text" maxlength="25"
                         class="validate">
                     <label for="sets1">Sets</label>
                 </div>
             </div>
             <div class="col s2">
-                <div class="input-field inline">
+                <div class="input-field inline exerciseField">
                     <input id="reps1" name="reps1" type="text" maxlength="25"
                         class="validate">
                     <label for="reps1">Reps</label>
                 </div>
             </div>
             <div class="col s2">
-                <div class="input-field inline">
+                <div class="input-field inline exerciseField">
                     <input id="weight" name="weight" type="text" maxlength="25"
                         class="validate">
                     <label for="weight">Weight</label>
                 </div>
             </div>
             <div class="col s2">
-                <div class="input-field inline">
+                <div class="input-field inline exerciseField">
                     <input id="duration" name="duration" type="text" maxlength="25"
                         class="validate">
                     <label for="duration">Duration</label>
                 </div>
             </div>
         </div>
+        <button class="btn-small deep-orange accent-3 content-txt" id="addExercise">
+            Add Exercise <i class ="fas fa-plus-square right"></i>
+        </button>
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
