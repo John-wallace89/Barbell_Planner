@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@100;300;400;500;600;700;800;900&display=swap');
 
+/* credit - https://css-tricks.com/perfect-full-page-background-image/ */
+html {
+    background: url("../images/barbell_planner_rack.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
     color: #fafafa;
@@ -27,8 +36,6 @@ i {
     line-height: 2;
     text-transform: capitalize;
 }
-
-;
 
 .btn-small {
     margin: 5px;
@@ -75,4 +82,18 @@ main {
 .social-links i:hover {
     transform: scale(1.25);
     color: #fafafa;
+}
+
+.auth-option a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.auth-option a:hover {
+    text-decoration: underline;
+}
+
+/*--https://codepen.io/eren12331/pen/xxbJeaW--*/
+.auth-card {
+    background: rgba(0, 0, 0, 0.6);
 }
