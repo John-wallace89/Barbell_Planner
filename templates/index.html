@@ -13,6 +13,8 @@
                 Log your workouts, and see the classes and workouts being logged by the rest of the gym!
             </div>
         </div>
+        <!--Logged in homepage-->
+        {% if session.user %}
         <div class="row">
             <div class="col l3 offset-l2 m3 offset-m2 s12">
                 <div class="row">
@@ -39,6 +41,35 @@
                 </div>
             </div>
         </div>
+        <!--Logged Out Homepage-->
+        {% else %}
+        <div class="row">
+            <div class="col l3 offset-l2 m3 offset-m2 s12">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-image">
+                            <a href="{{ url_for('register')}}">
+                                <img src="{{ url_for('static', filename='images/bb_logo1.jpeg') }}">
+                            </a>
+                        </div>
+                        <p class="content-txt center-align black-text">Register <i class="fas fa-id-card black-text"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col l3 offset-l2 m3 offset-m2 s12">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-image">
+                            <a href="{{ url_for('login')}}">
+                                <img src="{{ url_for('static', filename='images/bb_logo1.jpeg') }}">
+                            </a>
+                        </div>
+                        <p class="content-txt center-align black-text">Log in <i class="fab fa-wolf-pack-battalion black-text"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
     </div>
 

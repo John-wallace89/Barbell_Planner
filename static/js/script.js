@@ -16,9 +16,4 @@ $(document).ready(function () {
   $(".tooltipped").tooltip();
 // Select dropdown
   $("select").formSelect();
-
-// Clone fields
-$("#addExercise").click(function(){
-  $(".exerciseField").clone().appendTo("#exercises");
-});
 });

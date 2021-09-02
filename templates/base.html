@@ -28,8 +28,8 @@
                 <a href="{{ url_for('home')}}" class="brand-logo center-align">Barbell Planner</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    {% if session.user %}
                     <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% if session.user %}
                     <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
                     <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
