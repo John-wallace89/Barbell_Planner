@@ -31,6 +31,10 @@ html {
     color: #fafafa;
 }
 
+p {
+    margin: 0;
+}
+
 i {
     color: #fafafa;
 
