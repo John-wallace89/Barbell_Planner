@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content%}
-<h3 class="blue-grey content-title">Edit Workout</h3>
+<h3 class="auth-card content-title">Edit Workout</h3>
 
-<div class="row card-panel blue-grey darken-3">
+<div class="row card-panel auth-card">
     <form class="col s12" method="POST" action="{{ url_for('edit_workout', workout_id=workout._id) }}">
         <div class="row">
             <div class="col s12">
@@ -94,8 +94,8 @@
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for ('get_workouts') }}" class="btn-large red content-txt">Cancel<i class="fas fa-times-circle right"></i></a>
-                <button type="submit" class="btn-large blue-grey darken-1 content-txt">
+                <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i class="fas fa-times-circle right"></i></a>
+                <button type="submit" class="btn-large green darken-4 content-txt">
                     Edit Workout <i class ="fas fa-edit right"></i>
                 </button>
             </div>

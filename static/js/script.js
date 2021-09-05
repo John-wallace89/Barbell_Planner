@@ -16,4 +16,5 @@ $(document).ready(function () {
   $(".tooltipped").tooltip();
 // Select dropdown
   $("select").formSelect();
+
 });

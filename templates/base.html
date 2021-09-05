@@ -43,7 +43,7 @@
         <!--Mob nav bar-->
         <ul class="sidenav" id="mobile-demo">
             <img src="{{ url_for('static', filename='images/barbell_logo.jpeg') }}" alt="Barbell Logo"
-                style="max-height: 200px; max-width: 200px; text-align: center;">
+                style="max-width: 100%; text-align: center;">
             {% if session.user %}
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>

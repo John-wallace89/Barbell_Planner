@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@100;300;400;500;600;700;800;900&display=swap');
 
+/* -------------------------------------Background images--------------------------------*/
 /* credit - https://css-tricks.com/perfect-full-page-background-image/ */
 html {
     background: url("../images/barbell_planner_rack.jpeg") no-repeat center center fixed;
@@ -9,7 +10,7 @@ html {
     background-size: cover;
 }
 
-.home{
+.home {
     background: url("../images/bb_beast_2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -17,6 +18,23 @@ html {
     background-size: cover;
 }
 
+.bb_workout_bg {
+    background: url("../images/gym_full_1.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.log_workout_bg {
+    background: url("../images/gym_full_2.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*---------------------- Text styling --------------------------- */
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
     color: #fafafa;
@@ -54,10 +72,7 @@ i {
     margin: 5px;
 }
 
-.collapsible-header .col strong {
-    margin: 5px;
-}
-
+/* ------------- Materialize Css - Sticky Footer -------------- */
 body {
     display: flex;
     min-height: 100vh;
@@ -68,13 +83,24 @@ main {
     flex: 1 0 auto;
 }
 
-.workout-data p{
+/* ------------------------------- Barbell workouts - Collapsible content ------------------ */
+
+.collapsible-header .col strong {
+    margin: 5px;
+}
+
+.workout-data p {
     display: inline-block;
     padding: 1rem;
     font-size: 20px;
     letter-spacing: 2px;
 }
 
+.collapsible-body {
+    padding: 0.5rem;
+}
+
+/* ---------------------------------------- Footer ------------------- */
 .page-footer {
     padding: 0;
     max-height: 300px;
@@ -101,7 +127,7 @@ main {
 
 .social-links i:hover {
     transform: scale(1.25);
-    color: #fafafa;
+    color: red;
 }
 
 .auth-option a {
@@ -111,9 +137,24 @@ main {
 
 .auth-option a:hover {
     text-decoration: underline;
+    color: red;
 }
 
-/*--https://codepen.io/eren12331/pen/xxbJeaW--*/
+/*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
 .auth-card {
     background: rgba(0, 0, 0, 0.6);
+}
+
+/*------------- Input fields------------------------------ */
+/*--- Credit - https://stackoverflow.com/questions/6669846/css-input-field-text-color-of-inputted-text ---- */
+
+input,
+select,
+textarea {
+    color: #fafafa;
+}
+
+textarea:focus,
+input:focus {
+    color: #fafafa;
 }
