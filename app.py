@@ -19,13 +19,13 @@ mongo = PyMongo(app)
 
 
 # Home
+@app.route("/")
 @app.route("/home")
 def home():
     return render_template('index.html')
 
 
 # Login
-@app.route("/")
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
