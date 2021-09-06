@@ -34,7 +34,13 @@ html {
     background-size: cover;
 }
 
-/*---------------------- Text styling --------------------------- */
+/*---------------------- General styling --------------------------- */
+
+/*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
+.auth-card {
+    background: rgba(0, 0, 0, 0.6);
+}
+
 .content-txt {
     font-family: 'Big Shoulders Stencil Text', sans-serif;
     color: #fafafa;
@@ -106,12 +112,19 @@ main {
     max-height: 300px;
 }
 
+/* ------------------------ Link styling---------------------- */
+
 .social-links {
     font-size: 25px;
 }
 
+.social-links a {
+    color: #fafafa;
+}
+
 .social-links a:hover {
     text-decoration: underline;
+    color: red;
 }
 
 .social-links i {
@@ -138,11 +151,6 @@ main {
 .auth-option a:hover {
     text-decoration: underline;
     color: red;
-}
-
-/*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
-.auth-card {
-    background: rgba(0, 0, 0, 0.6);
 }
 
 /*------------- Input fields------------------------------ */
