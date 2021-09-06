@@ -34,6 +34,22 @@ html {
     background-size: cover;
 }
 
+/* ----------------------- Log workout-----------------------*/
+
+.switch label .lever {
+    background-color: red;
+}
+
+.switch label 
+input[type=checkbox]:checked+.lever {
+    background-color: red;
+}
+
+.switch label 
+input[type=checkbox]:checked+.lever:after {
+    background-color: #fafafa;
+}
+
 /*---------------------- General styling --------------------------- */
 
 /*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
@@ -93,6 +109,10 @@ main {
 
 .collapsible-header .col strong {
     margin: 5px;
+}
+
+.user-icon {
+    margin-left: 2rem;
 }
 
 .workout-data p {

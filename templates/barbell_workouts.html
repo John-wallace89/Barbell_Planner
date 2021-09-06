@@ -37,16 +37,17 @@
                     class="btn-small black white-text"> Edit</a>
                 <a href="{{ url_for('delete_workout', workout_id=workout._id) }}"
                     class="btn-small red darken-4 white-text"> Delete</a>
+                <i class="fab fa-wolf-pack-battalion user-icon tooltipped" data-position="bottom" data-tooltip="My Workout"></i>
                 {% endif %}
-                {% if workout.is_cardio == "on" %}
-                        <i class="fas fa-biking tooltipped" data-position="bottom" data-tooltip="Cardio Session"></i>
-                    {% else %}
-                        <i class="fas fa-dumbbell tooltipped" data-position="bottom" data-tooltip="Weights Session"></i>
-                    {% endif %}
             </div>
         </div>
         <div class="collapsible-body blue-grey darken-4">
             <div class="col s9 workout-data">
+                {% if workout.is_cardio == "on" %}
+                    <i class="fas fa-biking tooltipped" data-position="bottom" data-tooltip="Cardio Session"></i>
+                {% else %}
+                    <i class="fas fa-dumbbell tooltipped" data-position="bottom" data-tooltip="Weights Session"></i>
+                {% endif %}
                 <h5>{{ workout.exercise_type }}</h5><br>
                 <h6>{{ workout.exercise_name }}</h6><br>
                 <p>Sets: {{ workout.sets1 }}</p>
