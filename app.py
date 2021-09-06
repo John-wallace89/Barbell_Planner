@@ -122,6 +122,7 @@ def logout():
 def log_workout():
     if request.method == "POST":
         workout = {
+            "is_cardio": request.form.get("is_cardio"),
             "exercise_type": request.form.get("exercise_type"),
             "workout_name": request.form.get("workout_name"),
             "date": request.form.get("date"),

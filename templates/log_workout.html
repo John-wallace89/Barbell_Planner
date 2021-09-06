@@ -7,6 +7,19 @@
 
     <div class="row card-panel auth-card">
         <form class="col s12" method="POST" action="{{ url_for('log_workout') }}">
+            <!--Is Cardio Switch-->
+            <div class="row">
+                <div class="input-field col s12 center-align">
+                    <div class="switch">
+                        <label class="content-txt" for="is_cardio">
+                            Weights
+                            <input type="checkbox" id="is_cardio" name="is_cardio">
+                            <span class="lever"></span>
+                            Cardio
+                        </label>
+                    </div>
+                </div>
+            </div>
             <!--Workout name-->
             <div class="row">
                 <div class="input-field col s12">
@@ -16,13 +29,13 @@
                     <label for="workout_name">Workout Name</label>
                 </div>
             </div>
+            <!-- Exercise Type-->
             <div class="row">
-                <!-- Exercise Type-->
                 <div class="input-field col s12">
                     <select id="exercise_type" name="exercise_type" class="validate" required>
                         <option value="" disabled selected>Choose workout type</option>
                         {% for exercise in exercises %}
-                        <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                            <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
                         {% endfor %}
                     </select>
                     <label for="exercise_type">Workout Type</label>
