@@ -1,88 +1,86 @@
 {% extends "base.html" %}
 {% block content%}
-<body class="log_workout_bg">
-    
-<h3 class="auth-card content-title">Log Workout</h3>
 
-<div class="row card-panel auth-card">
-    <form class="col s12" method="POST" action="{{ url_for('log_workout') }}">
-        <div class="row">
-            <div class="input-field col s12">
-                <select id="exercise_type" name="exercise_type" class="validate" required>
-                    <option value="" disabled selected>Choose workout type</option>
-                    {% for exercise in exercises %}
-                        <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
-                    {% endfor %}
-                </select>
-                <label for="exercise_type">Workout Type</label>
-            </div>
-        </div>
-        <!--Workout name-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-dumbbell prefix"></i>
-                <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
-                <label for="workout_name">Workout Name</label>
-            </div>
-        </div>
-        <!--Calendar-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-calendar-alt prefix"></i>
-                <input id="date" name="date" minlength="5" maxlength="50" type="text" class="datepicker validate"
-                    required>
-                <label for="date">Date</label>
-            </div>
-        </div>
-        <!--Exercise name-->
-        <div class="row" id="exercises">
-            <div class="col s3">
-                <div class="input-field inline exerciseField">
-                    <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
+<body class="log_workout_bg">
+
+    <h3 class="auth-card content-title">Log Workout</h3>
+
+    <div class="row card-panel auth-card">
+        <form class="col s12" method="POST" action="{{ url_for('log_workout') }}">
+            <!--Workout name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-dumbbell prefix"></i>
+                    <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text"
                         class="validate" required>
-                    <label for="exercise_name">Exercise name</label>
+                    <label for="workout_name">Workout Name</label>
                 </div>
             </div>
-            <div class="col s2">
-                <div class="input-field inline exerciseField">
-                    <input id="sets1" name="sets1" type="text" maxlength="25"
-                        class="validate">
-                    <label for="sets1">Sets</label>
+            <div class="row">
+                <!-- Exercise Type-->
+                <div class="input-field col s12">
+                    <select id="exercise_type" name="exercise_type" class="validate" required>
+                        <option value="" disabled selected>Choose workout type</option>
+                        {% for exercise in exercises %}
+                        <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="exercise_type">Workout Type</label>
                 </div>
             </div>
-            <div class="col s2">
-                <div class="input-field inline exerciseField">
-                    <input id="reps1" name="reps1" type="text" maxlength="25"
-                        class="validate">
-                    <label for="reps1">Reps</label>
+            <!--Calendar-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix"></i>
+                    <input id="date" name="date" minlength="5" maxlength="50" type="text" class="datepicker validate"
+                        required>
+                    <label for="date">Date</label>
                 </div>
             </div>
-            <div class="col s2">
-                <div class="input-field inline exerciseField">
-                    <input id="weight" name="weight" type="text" maxlength="25"
-                        class="validate">
-                    <label for="weight">Weight</label>
+            <!--Exercise name-->
+            <div class="row" id="exercises">
+                <div class="col s3">
+                    <div class="input-field inline exerciseField">
+                        <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
+                            class="validate" required>
+                        <label for="exercise_name">Exercise name</label>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="input-field inline exerciseField">
+                        <input id="sets1" name="sets1" type="text" maxlength="25" class="validate">
+                        <label for="sets1">Sets</label>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="input-field inline exerciseField">
+                        <input id="reps1" name="reps1" type="text" maxlength="25" class="validate">
+                        <label for="reps1">Reps</label>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="input-field inline exerciseField">
+                        <input id="weight" name="weight" type="text" maxlength="25" class="validate">
+                        <label for="weight">Weight</label>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="input-field inline exerciseField">
+                        <input id="duration" name="duration" type="text" maxlength="25" class="validate">
+                        <label for="duration">Duration</label>
+                    </div>
                 </div>
             </div>
-            <div class="col s2">
-                <div class="input-field inline exerciseField">
-                    <input id="duration" name="duration" type="text" maxlength="25"
-                        class="validate">
-                    <label for="duration">Duration</label>
+            <!--Submit button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="waves-light btn-large green darken-4 content-txt">
+                        Log Workout <i class="fas fa-plus-square right"></i>
+                    </button>
                 </div>
             </div>
-        </div>
-        <!--Submit button-->
-        <div class="row">
-            <div class="col s12 center-align">
-                <button type="submit" class="waves-light btn-large green darken-4 content-txt">
-                    Log Workout <i class ="fas fa-plus-square right"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
 </body>
 {% endblock %}
