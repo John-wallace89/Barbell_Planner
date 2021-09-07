@@ -4,6 +4,19 @@
 
 <div class="row card-panel auth-card">
     <form class="col s12" method="POST" action="{{ url_for('edit_workout', workout_id=workout._id) }}">
+        <!--Is Cardio Switch-->
+        <div class="row">
+            <div class="input-field col s12 center-align">
+                <div class="switch">
+                    <label class="content-txt" for="is_cardio">
+                        Weights
+                        <input type="checkbox" id="is_cardio" name="is_cardio">
+                        <span class="lever"></span>
+                        Cardio
+                    </label>
+                </div>
+            </div>
+        </div>
         <!--Workout name-->
         <div class="row">
             <div class="input-field col s12">
@@ -19,11 +32,11 @@
                 <select id="exercise_type" name="exercise_type" class="validate" required>
                     <option value="" disabled selected>Choose workout type</option>
                     {% for exercise in exercises %}
-                        {% if exercise.exercise_type == workout.exercise_type %}
-                            <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>
-                        {% else %}
-                            <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
-                        {% endif %}
+                    {% if exercise.exercise_type == workout.exercise_type %}
+                    <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>
+                    {% else %}
+                    <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
                 <label for="exercise_type">Workout Type</label>
@@ -49,29 +62,29 @@
             </div>
             <div class="col s2">
                 <div class="input-field inline">
-                    <input id="sets1" name="sets1" type="text" maxlength="25"
-                        value="{{ workout.sets1 }}" class="validate">
+                    <input id="sets1" name="sets1" type="text" maxlength="25" value="{{ workout.sets1 }}"
+                        class="validate">
                     <label for="sets1">Sets</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
-                    <input id="reps1" name="reps1" type="text" maxlength="25"
-                       value="{{ workout.reps1 }}" class="validate">
+                    <input id="reps1" name="reps1" type="text" maxlength="25" value="{{ workout.reps1 }}"
+                        class="validate">
                     <label for="reps1">Reps</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
-                    <input id="weight" name="weight" type="text" maxlength="25"
-                       value="{{ workout.weight }}" class="validate">
+                    <input id="weight" name="weight" type="text" maxlength="25" value="{{ workout.weight }}"
+                        class="validate">
                     <label for="weight">Weight</label>
                 </div>
             </div>
             <div class="col s2">
                 <div class="input-field inline">
-                    <input id="duration" name="duration" type="text" maxlength="25"
-                       value="{{ workout.duration }}" class="validate">
+                    <input id="duration" name="duration" type="text" maxlength="25" value="{{ workout.duration }}"
+                        class="validate">
                     <label for="duration">Duration</label>
                 </div>
             </div>
@@ -79,9 +92,10 @@
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i class="fas fa-times-circle right"></i></a>
+                <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i
+                        class="fas fa-times-circle right"></i></a>
                 <button type="submit" class="btn-large green darken-4 content-txt">
-                    Edit Workout <i class ="fas fa-edit right"></i>
+                    Edit Workout <i class="fas fa-edit right"></i>
                 </button>
             </div>
         </div>

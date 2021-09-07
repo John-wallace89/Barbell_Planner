@@ -146,6 +146,7 @@ def log_workout():
 def edit_workout(workout_id):
     if request.method == "POST":
         submit = {
+            "is_cardio": request.form.get("is_cardio"),
             "exercise_type": request.form.get("exercise_type"),
             "workout_name": request.form.get("workout_name"),
             "date": request.form.get("date"),
