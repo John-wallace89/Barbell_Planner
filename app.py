@@ -167,7 +167,7 @@ def edit_workout(workout_id):
         "edit_workout.html", workout=workout, exercises=exercises)
 
 
-# delete workout
+# Delete workout
 @app.route("/delete_workout/<workout_id>")
 def delete_workout(workout_id):
     mongo.db.workouts.remove({"_id": ObjectId(workout_id)})

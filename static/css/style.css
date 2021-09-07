@@ -209,4 +209,9 @@ input:focus {
         height: 80px;
         width: 80px;
     }
+
+    .user-icon {
+        margin: 0;
+        padding: 0;
+    }
 }
