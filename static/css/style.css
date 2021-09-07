@@ -59,7 +59,6 @@ nav .brand-logo {}
 /*---------------------- General styling --------------------------- */
 
 /*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
-
 .auth-card {
     background: rgba(0, 0, 0, 0.6);
 }
@@ -76,6 +75,11 @@ nav .brand-logo {}
     text-transform: uppercase;
     text-align: center;
     color: #fafafa;
+}
+
+blockquote {
+    border-left: none;
+    font-size: 20px;
 }
 
 p {
