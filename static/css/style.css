@@ -34,25 +34,32 @@ html {
     background-size: cover;
 }
 
+/* ------------Nav -------------- */
+nav {
+    height: 100px;
+    line-height: 100px;
+}
+
+nav .brand-logo {}
+
 /* ----------------------- Log workout-----------------------*/
 
 .switch label .lever {
     background-color: red;
 }
 
-.switch label 
-input[type=checkbox]:checked+.lever {
+.switch label input[type=checkbox]:checked+.lever {
     background-color: red;
 }
 
-.switch label 
-input[type=checkbox]:checked+.lever:after {
+.switch label input[type=checkbox]:checked+.lever:after {
     background-color: #fafafa;
 }
 
 /*---------------------- General styling --------------------------- */
 
 /*---- Credit - https://codepen.io/eren12331/pen/xxbJeaW--*/
+
 .auth-card {
     background: rgba(0, 0, 0, 0.6);
 }
@@ -185,4 +192,17 @@ textarea {
 textarea:focus,
 input:focus {
     color: #fafafa;
+}
+
+/* -------------------- Media Queries---------------- */
+@media only screen and (max-width: 600px) {
+
+    nav {
+        height: 80px;
+    }
+
+    .nav-wrapper img {
+        height: 80px;
+        width: 80px;
+    }
 }
