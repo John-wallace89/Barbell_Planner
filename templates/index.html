@@ -7,14 +7,17 @@
         </div>
     </div>
     <div class="card-panel auth-card">
+        {% if session.user %}
         <h1 class="content-title">Welcome to the Barbell Planner</h1>
         <div class="row">
             <div class="col s12 content-txt center-align">
-                Log your workouts, and see the classes and workouts being logged by the rest of the gym!
+                The Barbell Planner is a platform that allows you to log your workouts and track
+                your progression along with the Barbell Gym community.<br>
+                <em>"There's no limit to what you can achieve if you Just Show Up"</em><br>
+                <p>- Gavin Smith, PT and owner of the Barbell Gym.</p>
             </div>
         </div>
         <!--Logged in homepage-->
-        {% if session.user %}
         <div class="row">
             <div class="col l3 offset-l2 m3 offset-m2 s12">
                 <a href="{{ url_for('log_workout')}}">
@@ -47,6 +50,12 @@
         </div>
         <!--Logged Out Homepage-->
         {% else %}
+        <h1 class="content-title">the Barbell Planner</h1>
+        <div class="row">
+            <div class="col s12 content-txt center-align">
+                Log in or Register below to get started!
+            </div>
+        </div>
         <div class="row">
             <div class="col l3 offset-l2 m3 offset-m2 s12">
                 <div class="row">
