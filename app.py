@@ -95,19 +95,6 @@ def register():
     return render_template("register.html")
 
 
-# User profile
-@app.route("/_workouts/<username>", methods=["GET", "POST"])
-def my_workouts(username):
-    # grab member username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("barbell_workouts.html", username=username)
-
-    return redirect(url_for("login"))
-
-
 # Logout
 @app.route("/logout")
 def logout():
@@ -142,7 +129,7 @@ def log_workout():
 
 
 # Edit button
-@app.route("/edit_workout<workout_id>", methods=["GET", "POST"])
+@app.route("/edit_workout/<workout_id>", methods=["GET", "POST"])
 def edit_workout(workout_id):
     if request.method == "POST":
         submit = {
