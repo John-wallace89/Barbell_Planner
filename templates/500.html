@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="error-page-bg">
+
+<div class="content-title black-text center-align">
+  <h1>No Rep <i class="fas fa-exclamation-triangle"></i></h1>
+    <p class="content-txt black-text">Seems we've run into an internal server error, we'll try get you back up and running ASAP<p><br>
+        <a href="{{ url_for ('home') }}" class="btn-large black content-txt" style="margin: 2rem;">Back to the Wolf Pit<i
+            class="fas fa-undo-alt right"></i></a>
+</div>
+
+</body>
+{% endblock %}
