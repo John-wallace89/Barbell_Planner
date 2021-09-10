@@ -48,8 +48,6 @@ nav {
     line-height: 100px;
 }
 
-nav .brand-logo {}
-
 /* ----------------------- Log workout-----------------------*/
 
 .switch label .lever {
@@ -204,6 +202,12 @@ textarea {
 textarea:focus,
 input:focus {
     color: #fafafa;
+}
+
+/*-------------- Hide cardio fields ---------------*/
+
+.hide {
+    display: none;
 }
 
 /* -------------------- Media Queries---------------- */

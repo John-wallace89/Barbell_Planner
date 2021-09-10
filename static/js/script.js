@@ -1,20 +1,22 @@
 $(document).ready(function () {
-// sidenav for mob init
-  $(".sidenav").sidenav({edge: "right"});
-//Collapsible component
+  // sidenav for mob init
+  $(".sidenav").sidenav({
+    edge: "right"
+  });
+  //Collapsible component
   $(".collapsible").collapsible();
-// datepicker
+  // datepicker
   $(".datepicker").datepicker({
     format: "dd mmmm, yyyy",
     yearRange: 3,
     showClearBtn: true,
     i18n: {
-        done: "Select"
+      done: "Select"
     }
-});
-// Tooltip
+  });
+  // Tooltip
   $(".tooltipped").tooltip();
-// Select dropdown
+  // Select dropdown
   $("select").formSelect();
 
 });
