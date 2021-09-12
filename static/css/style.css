@@ -134,7 +134,8 @@ main {
 
 .workout-data p {
     display: inline-block;
-    padding: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 20px;
     letter-spacing: 2px;
 }

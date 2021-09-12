@@ -43,17 +43,17 @@
         </div>
         <div class="collapsible-body blue-grey darken-4">
             <div class="col s9 workout-data">
-                {% if workout.is_cardio == "on" %}
-                    <i class="fas fa-biking tooltipped" data-position="bottom" data-tooltip="Cardio Session"></i>
-                {% else %}
-                    <i class="fas fa-dumbbell tooltipped" data-position="bottom" data-tooltip="Weights Session"></i>
-                {% endif %}
                 <h5>{{ workout.exercise_type }}</h5><br>
                 <h6>{{ workout.exercise_name }}</h6><br>
-                <p>Sets: {{ workout.sets1 }}</p>
-                <p>Reps: {{ workout.reps1 }}</p>
-                <p>Weight: {{ workout.weight }}</p>
-                <p>Duration: {{ workout.duration }}</p><br>
+                {% if workout.is_cardio == "on" %}
+                    <i class="fas fa-biking tooltipped" data-position="bottom" data-tooltip="Cardio Session"></i><br>
+                    <p>Duration: {{ workout.duration }}</p><br>
+                {% else %}
+                    <i class="fas fa-dumbbell tooltipped" data-position="bottom" data-tooltip="Weights Session"></i><br>
+                    <p>Sets: {{ workout.sets1 }}</p>
+                    <p>Reps: {{ workout.reps1 }}</p>
+                    <p>Weight: {{ workout.weight }}</p><br>
+                {% endif %}
                 <p><em>Logged by: {{ workout.created_by }}</em></p>
             </div>
         </div>
