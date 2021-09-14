@@ -37,7 +37,7 @@
                     class="btn-small black white-text"> Edit</a>
                 <a href="{{ url_for('delete_workout', workout_id=workout._id) }}"
                     class="btn-small red darken-4 white-text"> Delete</a>
-                <i class="fab fa-wolf-pack-battalion user-icon tooltipped" data-position="bottom" data-tooltip="My Workout"></i>
+                <i class="fab fa-wolf-pack-battalion user-icon tooltipped" data-position="bottom" data-tooltip="{{ workout.created_by|lower }}'s workout"></i>
                 {% endif %}
             </div>
         </div>
