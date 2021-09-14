@@ -48,6 +48,14 @@ nav {
     line-height: 100px;
 }
 
+nav ul a {
+    font-size: 20px;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
 /* ----------------------- Log workout-----------------------*/
 
 .switch label .lever {
