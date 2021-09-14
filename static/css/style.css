@@ -42,6 +42,14 @@ html {
     background-size: cover;
 }
 
+.login-card-bg {
+    background: url("../images/bb_logo1.jpeg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 /* ------------Nav -------------- */
 nav {
     height: 100px;

@@ -3,8 +3,10 @@ $(document).ready(function () {
   $(".sidenav").sidenav({
     edge: "right"
   });
+  
   //Collapsible component
   $(".collapsible").collapsible();
+
   // datepicker
   $(".datepicker").datepicker({
     format: "dd mmmm, yyyy",
@@ -14,9 +16,16 @@ $(document).ready(function () {
       done: "Select"
     }
   });
+
   // Tooltip
   $(".tooltipped").tooltip();
+
   // Select dropdown
   $("select").formSelect();
 
+  // Carousel
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
 });

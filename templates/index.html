@@ -14,7 +14,7 @@
                 The Barbell Planner is a platform that allows you to log your workouts and track
                 your progression along with the Barbell Gym community.<br>
                 <blockquote><em>"There's no limit to what you can achieve if you Just Show Up"</em><br>
-                - Gavin Smith, PT and owner of the Barbell Gym.</blockquote>
+                    - Gavin Smith, PT and owner of the Barbell Gym.</blockquote>
             </div>
         </div>
         <!--Logged in homepage-->
@@ -52,6 +52,18 @@
         {% else %}
         <h1 class="content-title">the Barbell Planner</h1>
         <div class="row">
+            <div class="carousel carousel-slider center">
+                <a href="{{ url_for('login') }}">
+                    <div class="carousel-item login-card-bg">
+                        <h2 class="content-title center">login</h2>
+                        <p class="content-txt center">Click Here to Log in</p>
+                    </div>
+                </a>
+                <div class="carousel-item amber white-text" href="{{ url_for('register') }}">
+                    <h2>Second Panel</h2>
+                    <p class="white-text">This is your second panel</p>
+                </div>
+            </div>
             <div class="col s12 content-txt center-align">
                 Log in or Register below to get started!
             </div>
@@ -66,19 +78,6 @@
                             </div>
                             <p class="content-txt center-align black-text">Register <i
                                     class="fas fa-id-card black-text"></i></p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col l3 offset-l2 m3 offset-m2 s12">
-                <div class="row">
-                    <a href="{{ url_for('login')}}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ url_for('static', filename='images/bbrothers_1.JPG') }}">
-                            </div>
-                            <p class="content-txt center-align black-text">Log in <i
-                                    class="fab fa-wolf-pack-battalion black-text"></i></p>
                         </div>
                     </a>
                 </div>
