@@ -19,31 +19,15 @@
         </div>
         <!--Logged in homepage-->
         <div class="row">
-            <div class="col l3 offset-l2 m3 offset-m2 s12">
-                <a href="{{ url_for('log_workout')}}">
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ url_for('static', filename='images/gym1.jpg') }}">
-                            </div>
-                            <p class="content-txt center-align black-text">Log Workout <i
-                                    class="fas fa-plus-square black-text"></i>
-                            </p>
-                        </div>
+            <div class="carousel carousel-slider center">
+                <a href="{{ url_for('log_workout') }}">
+                    <div class="carousel-item logwork-card-bg">
+                        <h2 class="content-title">Log a workout</h2>
                     </div>
                 </a>
-            </div>
-            <div class="col l3 offset-l2 m3 offset-m2 s12">
-                <a href="{{ url_for('get_workouts')}}">
-
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ url_for('static', filename='images/bb_beast_logo.jpg') }}">
-                            </div>
-                            <p class="content-txt center-align black-text">Barbell Workouts <i
-                                    class="fas fa-dumbbell black-text"></i></p>
-                        </div>
+                <a href="{{ url_for('get_workouts') }}">
+                    <div class="carousel-item barbellwork-card-bg">
+                        <h2 class="content-title">Barbell workouts</h2>
                     </div>
                 </a>
             </div>
@@ -52,35 +36,24 @@
         {% else %}
         <h1 class="content-title">the Barbell Planner</h1>
         <div class="row">
-            <div class="carousel carousel-slider center">
-                <a href="{{ url_for('login') }}">
-                    <div class="carousel-item login-card-bg">
-                        <h2 class="content-title center">login</h2>
-                        <p class="content-txt center">Click Here to Log in</p>
-                    </div>
-                </a>
-                <div class="carousel-item amber white-text" href="{{ url_for('register') }}">
-                    <h2>Second Panel</h2>
-                    <p class="white-text">This is your second panel</p>
-                </div>
-            </div>
             <div class="col s12 content-txt center-align">
                 Log in or Register below to get started!
             </div>
         </div>
         <div class="row">
-            <div class="col l3 offset-l2 m3 offset-m2 s12">
-                <div class="row">
-                    <a href="{{ url_for('register')}}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ url_for('static', filename='images/logo_4.jpg') }}">
-                            </div>
-                            <p class="content-txt center-align black-text">Register <i
-                                    class="fas fa-id-card black-text"></i></p>
-                        </div>
-                    </a>
-                </div>
+            <div class="carousel carousel-slider center">
+                <a href="{{ url_for('login') }}">
+                    <div class="carousel-item login-card-bg">
+                        <h2 class="content-title">login</h2>
+                        <p class="content-txt">Click Here to Log in</p>
+                    </div>
+                </a>
+                <a href="{{ url_for('register') }}">
+                    <div class="carousel-item reg-card-bg">
+                        <h2 class="content-title">Register</h2>
+                        <p class="content-txt">Click Here To Register</p>
+                    </div>
+                </a>
             </div>
         </div>
         {% endif %}

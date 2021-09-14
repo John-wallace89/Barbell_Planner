@@ -50,6 +50,29 @@ html {
     background-size: cover;
 }
 
+.reg-card-bg {
+    background: url("../images/logo_4.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+
+.logwork-card-bg {
+    background: url("../images/gym1.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+
+.barbellwork-card-bg {
+    background: url("../images/gym_4.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
 /* ------------Nav -------------- */
 nav {
     height: 100px;
@@ -221,10 +244,30 @@ input:focus {
     color: #fafafa;
 }
 
-/*-------------- Hide cardio fields ---------------*/
+/*-------------- Carousel ---------------*/
 
-.hide {
-    display: none;
+.carousel.carousel-slider
+.carousel-item
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel.carousel-slider
+.carousel-item
+p {
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel
+.indicators
+.indicator-item.active {
+    background-color: red;
 }
 
 /* -------------------- Media Queries---------------- */
