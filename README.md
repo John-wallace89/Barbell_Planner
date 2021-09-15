@@ -13,7 +13,7 @@ Live project: [https://barbell-planner.herokuapp.com/]
 
 * User Story 1 - As a user, I land on the dashboard and it is clear what the site is and it's purpose.
 * User Story 2  - As a user, I can easily navigate through the dashboard.
-* User Story 3 - As a user, there is a clear call to action to login.
+* User Story 3 - As a user, there is a clear call to action to login/Register.
 * User Story 4 - As a user, given I havn't registered, there is a clear option for me to register as a user of the planner.
 * User Story 5 - As a user I can access the business social media channels from anywhere on the site.
 * User Story 6 - As an admin, I can limit the the navigation options presented to the user if they have not yet logged in.
@@ -28,9 +28,13 @@ Live project: [https://barbell-planner.herokuapp.com/]
 * User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout
 * User Story 16 - As a user when I select 'Weight' workout, I am asked for the name, reps and weight used in my workout and the date
 * User Story 17 - As a user, When I select 'Cardio', I am asked for the exercise name, duration and date.
+UPDATE - functionality changed for User stories 16 and 17, all above options are provided and are restricted when displayed in the
+'Barbell Workouts' page.
 * User Story 18 - As a user when I click on 'Log Workout' the workout then shows on the 'My Workout section of the site.
+UPDATE - logged workouts are stored in 'Barbell workouts' section.
 * User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged.
-* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created. 
+UPDATE - logged workouts are stored in 'Barbell workouts' section.
+* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created.
 
 ### Design ###
 
@@ -50,6 +54,7 @@ Responsive layout on mobile and tablet,
 Collapsible Nav bar for mobile view,
 Collapsible menu for displaying logged workouts,
 Authentication (Login/Register functionality),
+Search,
 Defensive programming
 
 ### Technologies: ###
@@ -100,8 +105,87 @@ Select element is required in order to pull through the selected data from when 
 * User Story 1 - As a user, I land on the dashboard and it is clear what the site is and it's purpose:
 There is a clear page title under a clear navigation bar providing different navigation options at this stage on the site.
 This is followed clear instructions prompting the user to either register or login to progress.
+* User Story 2  - As a user, I can easily navigate through the dashboard:
+The Nav bar is clearly presented at the top of the screen, and the menu collapses into a burger menu on smaller screen sizes
+to improve usability and appearance.
+* User Story 3 - As a user, there is a clear call to action to login/Register:
+Options to either register or login are provided on a carousel to direct each user to their chosen page.
 ![Dashboard screenshot](static/images/screenshots/logged_out_dashboard.JPG)
 ![Dashboard screenshot mob](static/images/screenshots/logged_out_dashboard_mob.JPG)
+
+
+
+* User Story 4 - As a user, given I havn't registered, there is a clear option for me to register as a user of the planner:
+Given I am on the site and have been directed to the login page, there is a clear prompt for me to register if I have not done so already.
+Given I am on the site and have been directed to the registration page, there is a clear prompt for me to login if I have already registered.
+![login screenshot](static/images/screenshots/login_page.JPG)
+![register screenshot tablet](static/images/screenshots/register_page_ipad.JPG)
+
+
+* User Story 5 - As a user I can access the business social media channels from anywhere on the site:
+The footer is constantly displayed with links to all the relevant social media channels, regardless if the user is logged in or not.
+* User Story 6 and 12 - As an admin, I can limit the the navigation options presented to the user if they have not yet logged in.
+Given I am a logged out user, the navigation options open to me are 'Home', 'Login' or 'Register'.
+Given I am a logged in user, the navigation options change to 'Home', 'Barbell Workouts', 'Log a Workout' or 'Logout'
+and the content of the homepage changes.
+![logged in dashboard screenshot](static/images/screenshots/logged_in_dashboard.JPG)
+![footer logged in mobile screenshot](static/images/screenshots/footer_iphonex.JPG)
+
+
+* User Story 7 - As a new user, I can navigate to the registration page easily:
+Given I am logged out, I can easily navigate to the registration page, either the nav bar or the homepage.
+* User Story 8 - As a user, There is a clear call to action on what details I must input into the registration fields:
+There is a clear prompt to provide a username and password.
+* User Story 9 - As a user, I can see if I have successfully registered
+Given I have submitted the appropriate details, i am provided with a success message if I have successfully registered.
+* User Story 10 - As a user, I am informed if I have entered invalid data into a field:
+If I have entered wrong information into the registration fields, I am shown an error message.
+![registration success screenshot](static/images/screenshots/successful_registration_message.JPG)
+![register error screenshot](static/images/screenshots/register_error_1a.JPG)
+![register error screenshot](static/images/screenshots/register_error.JPG)
+
+* User Story 11 - As an admin, I can see the successfully registered username and encoded password in the database:
+As and admin I can see the submitted information in MongoDB under collection 'Users' with username and a hashed password.
+The password hash method is used through Werkzeug.
+
+* User Story 13 - As a user, I can see a clear call to action to log a workout when I have logged in:
+Once logged in I can access the 'Log a workout' page by clicking on the carousel or on the nav bar.
+![log workout carousel screenshot](static/images/screenshots/log_workout_carousel.JPG)
+![log workout nav Edge screenshot](static/images/screenshots/log_workout_nav.JPG)
+
+* User Story 14 - As a user, given I have logged in, I can logout at any point in the site:
+Once logged in, the option to log out is available in the nav bar at any point in the customer journey.
+
+* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout:
+When logging a workout, I can see a switch that will let me indicate whether the workout is a 'cardio' or 'Weights' workout.
+![log workout page screenshot](static/images/screenshots/log_workout_page.JPG)
+
+* User Story 16 & 17 (UPDATED) - When I log my workout, I can clearly see which type of workout it is, either 'Cardio' or 'Weights':
+Given I have logged a workout, my workout will appear in the list in the 'Barbell workouts' page. I can clearly see which workouts are mine
+and when I click on my workouts I am presented with an icon/tooltip that let's me know the type of workout it is.
+* User Story 18- UPDATED - As a user when I click on 'Log Workout' the workout then shows on the 'Barbell workouts' section of the site,
+and I am presnted with an success message:
+When I have successfully logged a workout, I am directed back to the Barbell workouts page and presented with a success message. 
+* User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged:
+My workouts are clearly identified with an icon and I can only edit, or delete workouts I have logged.
+![user workout pixel 2 screenshot](static/images/screenshots/barbell_workouts_pixel2.JPG)
+![user workout open with icon screenshot](static/images/screenshots/barbell_workouts_open_icon.JPG)
+![logged workout success screenshot](static/images/screenshots/log_workout_success.JPG)
+![workout in barbell workouts page screenshot](static/images/screenshots/workout_logged.JPG)
+
+* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created:
+Given I have logged a workout, I can edit that workout by clicking on 'Edit'. This takes me to the
+Edit workout page.
+![edit workout screenshot](static/images/screenshots/edit_workout_page.JPG)
+Once I have made relevant changes to my workout, I can either click on 'Cancel' to go back without
+submitting my changes, or 'Edit' to submit my changes. I then see a message to see I have successfully
+edited my workout.
+![edit workout success screenshot](static/images/screenshots/edit_successful.JPG)
+If I attempt to edit a workout that isn't mine, Iam presented with an error.
+![edit workout success screenshot](static/images/screenshots/unauthorised_edit.JPG)
+I can then search for my workout, by name or date, access my workout, or I can delete my workout.
+Once I have clicked on delete, I am presnted with another message if deleted successfully.
+![delete workout success screenshot](static/images/screenshots/edit_successful.JPG)
 
 
 
@@ -111,7 +195,6 @@ This is followed clear instructions prompting the user to either register or log
 
 * Bugs:
      The navigation links do not render correctly on Iphone 5 screen:
-     ![hero image screenshot](assets/images/screenshots/user_story_12.JPG)
      Resolved: No, Iphone 5 is now an old model and the navigation renders correctly on all Iphone models in
      the last 5 years. 
      Future fix may include a collapsable nav bar that lends itself to smaller screens.
