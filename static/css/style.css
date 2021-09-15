@@ -18,7 +18,7 @@ html {
     background-size: cover;
 }
 
-.bb_workout_bg {
+.bb-workout-bg {
     background: url("../images/gym_full_1.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,7 +26,7 @@ html {
     background-size: cover;
 }
 
-.log_workout_bg {
+.log-workout-bg {
     background: url("../images/gym_full_2.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

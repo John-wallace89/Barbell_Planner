@@ -88,14 +88,23 @@ The W3C Markup Validator, W3C CSS and JSHint Validator Services were used to val
 there were no syntax errors.
 
 * [W3C Markup validator](https://validator.w3.org/#validate_by_input)
+1 Error - "The select element cannot have more than one selected option descendant unless the multiple attribute is specified."
+Select element is required in order to pull through the selected data from when a workout is initially logged.
 
+* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator) No errors were returned from the CSS validator.
 
-* [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
-
-* [JSHint](https://jshint.com/)
-
+* [JSHint](https://jshint.com/) No errors were returned from the JS validator.
 
 ### Testing user stories ###
+
+* User Story 1 - As a user, I land on the dashboard and it is clear what the site is and it's purpose:
+There is a clear page title under a clear navigation bar providing different navigation options at this stage on the site.
+This is followed clear instructions prompting the user to either register or login to progress.
+![Dashboard screenshot](static/images/screenshots/logged_out_dashboard.JPG)
+![Dashboard screenshot mob](static/images/screenshots/logged_out_dashboard_mob.JPG)
+
+
+
 
 ### Further testing ###
      
