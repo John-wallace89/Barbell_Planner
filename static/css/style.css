@@ -10,16 +10,8 @@ html {
     background-size: cover;
 }
 
-.home {
-    background: url("../images/bb_beast_2.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .bb-workout-bg {
-    background: url("../images/gym_full_1.jpeg") no-repeat center center fixed;
+    background: url("../images/bb_beast_2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

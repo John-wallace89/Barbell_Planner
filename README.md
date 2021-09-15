@@ -194,10 +194,9 @@ Once I have clicked on delete, I am presnted with another message if deleted suc
      
 
 * Bugs:
-     The navigation links do not render correctly on Iphone 5 screen:
-     Resolved: No, Iphone 5 is now an old model and the navigation renders correctly on all Iphone models in
-     the last 5 years. 
-     Future fix may include a collapsable nav bar that lends itself to smaller screens.
+     The navigation header does not render correctly on Iphone 5/MotoG4 screen:
+     Resolved: No, Iphone 5 and MotoG4 are old models and the navigation renders correctly on all phone/tablet models in
+     the last 5 years.
 
 
 * Potential enhancements:
