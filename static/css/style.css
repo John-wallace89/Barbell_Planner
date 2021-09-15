@@ -55,7 +55,7 @@ html {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .logwork-card-bg {
@@ -63,7 +63,7 @@ html {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .barbellwork-card-bg {
@@ -71,8 +71,9 @@ html {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; 
+    background-size: cover;
 }
+
 /* ------------Nav -------------- */
 nav {
     height: 100px;
@@ -246,9 +247,7 @@ input:focus {
 
 /*-------------- Carousel ---------------*/
 
-.carousel.carousel-slider
-.carousel-item
-h2 {
+.carousel.carousel-slider .carousel-item h2 {
     font-size: 40px;
     font-weight: 600;
     padding: 0;
@@ -257,16 +256,12 @@ h2 {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.carousel.carousel-slider
-.carousel-item
-p {
+.carousel.carousel-slider .carousel-item p {
     font-size: 25px;
     background: rgba(0, 0, 0, 0.6);
 }
 
-.carousel
-.indicators
-.indicator-item.active {
+.carousel .indicators .indicator-item.active {
     background-color: red;
 }
 

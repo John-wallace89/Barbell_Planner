@@ -3,7 +3,7 @@ $(document).ready(function () {
   $(".sidenav").sidenav({
     edge: "right"
   });
-  
+
   //Collapsible component
   $(".collapsible").collapsible();
 
