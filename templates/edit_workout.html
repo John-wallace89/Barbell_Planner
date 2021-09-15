@@ -1,119 +1,124 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="auth-card content-title">Edit Workout</h3>
+    <h3 class="auth-card content-title">Edit Workout</h3>
 
-<div class="row card-panel auth-card">
-    {% if session.user|lower == workout.created_by|lower %}
-        <form class="col s12" method="POST" action="{{ url_for('edit_workout', workout_id=workout._id) }}">
-            <!--Is Cardio Switch-->
-            <div class="row">
-                <div class="input-field col s12 center-align">
-                    <div class="switch">
-                        <label class="content-txt" for="is_cardio">
-                            Weights
-                            <input type="checkbox" id="is_cardio" name="is_cardio">
-                            <span class="lever"></span>
-                            Cardio
-                        </label>
+    <div class="row card-panel auth-card">
+        {% if session.user|lower == workout.created_by|lower %}
+            <form class="col s12" method="POST" action="{{ url_for('edit_workout', workout_id=workout._id) }}">
+                <!--Is Cardio Switch-->
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <div class="switch">
+                            <label class="content-txt" for="is_cardio">
+                                Weights
+                                <input type="checkbox" id="is_cardio" name="is_cardio">
+                                <span class="lever"></span>
+                                Cardio
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Workout name-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-dumbbell prefix"></i>
-                    <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text" class="validate"
-                        value="{{ workout.workout_name }}" required>
-                    <label for="workout_name">Workout Name</label>
-                </div>
-            </div>
-            <!-- Exercise Type-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="exercise_type" name="exercise_type" class="validate" required>
-                        <option value="" disabled selected>Choose workout type</option>
-                        {% for exercise in exercises %}
-                        {% if exercise.exercise_type == workout.exercise_type %}
-                            <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>
-                        {% else %}
-                            <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
-                        {% endif %}
-                        {% endfor %}
-                    </select>
-                    <label for="exercise_type">Workout Type</label>
-                </div>
-            </div>
-            <!--Calendar-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix"></i>
-                    <input id="date" name="date" minlength="5" maxlength="50" type="text" class="datepicker validate"
-                        value="{{ workout.date }}" required>
-                    <label for="date">Date</label>
-                </div>
-            </div>
-            <!--Exercise name-->
-            <div class="row">
-                <div class="col s2">
-                    <div class="input-field inline">
-                        <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
-                            class="validate" value="{{ workout.exercise_name }}" required>
-                        <label for="exercise_name">Exercise name</label>
+                <!--Workout name-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-dumbbell prefix"></i>
+                        <input id="workout_name" name="workout_name" minlength="5" maxlength="50" type="text" class="validate"
+                            value="{{ workout.workout_name }}" required>
+                        <label for="workout_name">Workout Name</label>
                     </div>
                 </div>
-                <div class="col s2">
-                    <div class="input-field inline">
-                        <input id="sets1" name="sets1" type="text" maxlength="25" value="{{ workout.sets1 }}"
-                            class="validate">
-                        <label for="sets1">Sets</label>
+                <!-- Exercise Type-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="exercise_type" name="exercise_type" class="validate" required>
+                            <option value="" disabled selected>Choose workout type</option>
+                            {% for exercise in exercises %}
+                                {% if exercise.exercise_type == workout.exercise_type %}
+                                    <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>
+                                {% else %}
+                                    <option value="{{ exercise.exercise_type }}">{{ exercise.exercise_type }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label for="exercise_type">Workout Type</label>
                     </div>
                 </div>
-                <div class="col s2">
-                    <div class="input-field inline">
-                        <input id="reps1" name="reps1" type="text" maxlength="25" value="{{ workout.reps1 }}"
-                            class="validate">
-                        <label for="reps1">Reps</label>
+                <!--Calendar-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix"></i>
+                        <input id="date" name="date" minlength="5" maxlength="50" type="text" class="datepicker validate"
+                            value="{{ workout.date }}" required>
+                        <label for="date">Date</label>
                     </div>
                 </div>
-                <div class="col s2">
-                    <div class="input-field inline">
-                        <input id="weight" name="weight" type="text" maxlength="25" value="{{ workout.weight }}"
-                            class="validate">
-                        <label for="weight">Weight</label>
+                <div class="row">
+                    <!--Exercise name-->
+                    <div class="col s2">
+                        <div class="input-field inline">
+                            <input id="exercise_name" name="exercise_name" type="text" minlength="5" maxlength="25"
+                                class="validate" value="{{ workout.exercise_name }}" required>
+                            <label for="exercise_name">Exercise name</label>
+                        </div>
+                    </div>
+                    <!--Sets-->
+                    <div class="col s2">
+                        <div class="input-field inline">
+                            <input id="sets1" name="sets1" type="text" maxlength="25" value="{{ workout.sets1 }}"
+                                class="validate">
+                            <label for="sets1">Sets</label>
+                        </div>
+                    </div>
+                    <!--Reps-->
+                    <div class="col s2">
+                        <div class="input-field inline">
+                            <input id="reps1" name="reps1" type="text" maxlength="25" value="{{ workout.reps1 }}"
+                                class="validate">
+                            <label for="reps1">Reps</label>
+                        </div>
+                    </div>
+                    <!--Weight-->
+                    <div class="col s2">
+                        <div class="input-field inline">
+                            <input id="weight" name="weight" type="text" maxlength="25" value="{{ workout.weight }}"
+                                class="validate">
+                            <label for="weight">Weight</label>
+                        </div>
+                    </div>
+                    <!--Duration-->
+                    <div class="col s2">
+                        <div class="input-field inline">
+                            <input id="duration" name="duration" type="text" maxlength="25" value="{{ workout.duration }}"
+                                class="validate">
+                            <label for="duration">Duration</label>
+                        </div>
                     </div>
                 </div>
-                <div class="col s2">
-                    <div class="input-field inline">
-                        <input id="duration" name="duration" type="text" maxlength="25" value="{{ workout.duration }}"
-                            class="validate">
-                        <label for="duration">Duration</label>
+                <div class="row">
+                    <!--Sets-->
+                    <div class="col s12 m8 offset-m2 center-align content-txt">
+                        <p><em>Logged by: {{ workout.created_by }}</em></p>
                     </div>
                 </div>
-            </div>
+                <!--Submit button-->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i
+                                class="fas fa-times-circle right"></i></a>
+                        <button type="submit" class="btn-large green darken-4 content-txt">
+                            Edit Workout <i class="fas fa-edit right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        {% else %}
             <div class="row">
-                <div class="col s12 m8 offset-m2 center-align content-txt">
-                    <p><em>Logged by: {{ workout.created_by }}</em></p>
+                <div class="col s12 content-txt center-align">
+                    <h4>You are not authorised to edit this workout</h4>
+                    <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Return<i
+                        class="fas fa-undo-alt right"></i></a>
                 </div>
             </div>
-            <!--Submit button-->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i
-                            class="fas fa-times-circle right"></i></a>
-                    <button type="submit" class="btn-large green darken-4 content-txt">
-                        Edit Workout <i class="fas fa-edit right"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    {% else %}
-        <div class="row">
-            <div class="col s12 content-txt center-align">
-                <h4>You are not authorised to edit this workout</h4>
-                <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Return<i
-                    class="fas fa-undo-alt right"></i></a>
-            </div>
-        </div>
-    {% endif %}
-</div>
+        {% endif %}
+    </div>
 {% endblock %}

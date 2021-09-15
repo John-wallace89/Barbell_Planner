@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel auth-card">
-            <h3 class="center-align content-title">Register</h3>
-            <!--Username field-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-id-card prefix white-text text-darken-4"></i>
-                    <input id="username" name="username" type="text" minlength="8" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="first_name">Username</label>
-                </div>
-            </div>
-            <!--password field-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-lock prefix white-text text-darken-4"></i>
-                    <input id="password" name="password" type="password" minlength="8" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="password">Password</label>
-                </div>
-                <!--Register button-->
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <div class="card-panel auth-card">
+                <h3 class="center-align content-title">Register</h3>
+                <!--Username field-->
                 <div class="row">
-                    <button class="col m8 offset-m2 s12 btn-large grey darken-4 content-txt z-depth-4" type="submit">
-                        Join The Pack <i class="fab fa-wolf-pack-battalion white-text"></i>
-                    </button>
+                    <div class="input-field col s12">
+                        <i class="fas fa-id-card prefix white-text text-darken-4"></i>
+                        <input id="username" name="username" type="text" minlength="8" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="first_name">Username</label>
+                    </div>
                 </div>
-                <div class="row auth-option">
-                    <div class="col s12">
-                        <h5 class="center-align content-txt">
-                            Already Registered? <a href="{{ url_for('login') }}">Log In Here</a>
-                        </h5>
+                <!--password field-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-lock prefix white-text text-darken-4"></i>
+                        <input id="password" name="password" type="password" minlength="8" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <!--Register button-->
+                    <div class="row">
+                        <button class="col m8 offset-m2 s12 btn-large grey darken-4 content-txt z-depth-4" type="submit">
+                            Join The Pack <i class="fab fa-wolf-pack-battalion white-text"></i>
+                        </button>
+                    </div>
+                    <div class="row auth-option">
+                        <div class="col s12">
+                            <h5 class="center-align content-txt">
+                                Already Registered? <a href="{{ url_for('login') }}">Log In Here</a>
+                            </h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+
 {% endblock %}

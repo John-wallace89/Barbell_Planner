@@ -1,65 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
 
-<body class="home">
-    <div class="row">
-        <div class="col s12">
-        </div>
-    </div>
-    <div class="card-panel auth-card">
-        {% if session.user %}
-        <h1 class="content-title">Welcome to the Barbell Planner</h1>
+    <body class="home">
         <div class="row">
-            <div class="col s12 content-txt center-align">
-                The Barbell Planner is a platform that allows you to log your workouts and track
-                your progression along with the Barbell Gym community.<br>
-                <blockquote><em>"There's no limit to what you can achieve if you Just Show Up"</em><br>
-                    - Gavin Smith, PT and owner of the Barbell Gym.</blockquote>
+            <div class="col s12">
             </div>
         </div>
-        <!--Logged in homepage-->
-        <div class="row">
-            <div class="carousel carousel-slider center">
-                <a href="{{ url_for('log_workout') }}">
-                    <div class="carousel-item logwork-card-bg">
-                        <h2 class="content-title">Log a workout</h2>
+        <div class="card-panel auth-card">
+            {% if session.user %}
+                <h1 class="content-title">Welcome to the Barbell Planner</h1>
+                <!--Logged in homepage-->
+                <div class="row">
+                    <div class="col s12 content-txt center-align">
+                        The Barbell Planner is a platform that allows you to log your workouts and track
+                        your progression along with the Barbell Gym community.<br>
+                        <blockquote><em>"There's no limit to what you can achieve if you Just Show Up"</em><br>
+                            - Gavin Smith, PT and owner of the Barbell Gym.</blockquote>
                     </div>
-                </a>
-                <a href="{{ url_for('get_workouts') }}">
-                    <div class="carousel-item barbellwork-card-bg">
-                        <h2 class="content-title">Barbell workouts</h2>
+                </div>
+                <div class="row">
+                    <div class="carousel carousel-slider center">
+                        <a href="{{ url_for('log_workout') }}">
+                            <div class="carousel-item logwork-card-bg">
+                                <h2 class="content-title">Log a workout</h2>
+                            </div>
+                        </a>
+                        <a href="{{ url_for('get_workouts') }}">
+                            <div class="carousel-item barbellwork-card-bg">
+                                <h2 class="content-title">Barbell workouts</h2>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+                </div>
+            {% else %}
+                <!--Logged Out Homepage-->
+                <h1 class="content-title">the Barbell Planner</h1>
+                <div class="row">
+                    <div class="col s12 content-txt center-align">
+                        Log in or Register below to get started!
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="carousel carousel-slider center">
+                        <a href="{{ url_for('login') }}">
+                            <div class="carousel-item login-card-bg">
+                                <h2 class="content-title">login</h2>
+                                <p class="content-txt">Click Here to Log in</p>
+                            </div>
+                        </a>
+                        <a href="{{ url_for('register') }}">
+                            <div class="carousel-item reg-card-bg">
+                                <h2 class="content-title">Register</h2>
+                                <p class="content-txt">Click Here To Register</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
         </div>
-        <!--Logged Out Homepage-->
-        {% else %}
-        <h1 class="content-title">the Barbell Planner</h1>
-        <div class="row">
-            <div class="col s12 content-txt center-align">
-                Log in or Register below to get started!
-            </div>
-        </div>
-        <div class="row">
-            <div class="carousel carousel-slider center">
-                <a href="{{ url_for('login') }}">
-                    <div class="carousel-item login-card-bg">
-                        <h2 class="content-title">login</h2>
-                        <p class="content-txt">Click Here to Log in</p>
-                    </div>
-                </a>
-                <a href="{{ url_for('register') }}">
-                    <div class="carousel-item reg-card-bg">
-                        <h2 class="content-title">Register</h2>
-                        <p class="content-txt">Click Here To Register</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% endif %}
-    </div>
-    </div>
+    </body>
 
-    </div>
-</body>
 {% endblock %}

@@ -30,12 +30,12 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-                    <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+                        <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -46,12 +46,12 @@
                 style="max-width: 100%; text-align: center;">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
-            <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
+                <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -61,11 +61,11 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
-        <div class="row msgs-txt">
-            <div class="col s12 m8 offset-m2">
-                <h4>{{ message }}</h4>
+            <div class="row msgs-txt">
+                <div class="col s12 m8 offset-m2">
+                    <h4>{{ message }}</h4>
+                </div>
             </div>
-        </div>
         {% endfor %}
         {% endif %}
         {% endwith %}

@@ -1,13 +1,13 @@
 <h1 style="text-align: center">The Barbell Planner</h1>
 
-![hero image screenshot]()
+![hero image screenshot](static/images/barbell_responsive.JPG)
 
 This is my submission for Milestone project 3. The Barbell Planner is a fitness based application allowing the user
-to log a specific kind of workout. The user will be able to authenticate themself, log a workout, and then Edit or Delete
+to log either a cardio or weights based workout. The user will be able to authenticate themself, log a workout, and then Read, Update or Delete
 that workout from the list they have created. The application will also allow them to navigate to the Barbell gym site
 and Social Media channels.
 
-Live project: []
+Live project: [https://barbell-planner.herokuapp.com/]
 
 ### User Experience (UX) ###
 
@@ -34,20 +34,23 @@ Live project: []
 
 ### Design ###
 
-* Colour scheme - The colour scheme is dark blue and white which matches with the imagery on the site
-and helps towards a sleek, 'space-age' modern aesthetic.
+* Colour scheme - The colour scheme is black and white matching the brand and ethos of the business.
 
-* Typography - the 'Teko' font is used as it is bold, easy to read and suits the hero/comicbook feel and
-aesthetic of the site.
+* Typography - the 'Big Shoulders Stencil Text' font is used as it is bold, easy to read and suits the military old school
+feel of the brand.
 
-* Imagery - The hero image is the logo for the Justice League. background imagery was chosen to convey a futuristic
-aesthetic and a setting in space. Images were used to display the characters mentioned throughout the site.
+* Imagery - The Barbell Gym logo is shown throughout the site to draw attention as the business' distinctive feature. Background images include images
+from the gym and classes to provide an insight to users of what the gym looks like, can be seen throughout various pages of the site.
 
 * WireFrames:
 Desktop and Mobile wireframes - https://marvelapp.com/prototype/5d24b2d
 
 * Features:
-Responsive layout on mobile and tablet. Interactive Maps, email and card-flip functionality.
+Responsive layout on mobile and tablet,
+Collapsible Nav bar for mobile view,
+Collapsible menu for displaying logged workouts,
+Authentication (Login/Register functionality),
+Defensive programming
 
 ### Technologies: ###
 
@@ -55,20 +58,27 @@ Responsive layout on mobile and tablet. Interactive Maps, email and card-flip fu
 HTML5
 CSS3
 JS
+Python
 
 * Frameworks/libraries/programs - 
   https://favicon.io/favicon-converter/ - Used to create logo for title.
 
-  https://www.rawpixel.com - Used for background image.
-
   https://fonts.google.com/ - used for font design.
 
+  Flask App - https://flask.palletsprojects.com/en/2.0.x/ to run site on and use of Jinja templating and Werkzeug functionality. 
+
+  MongoDB Atlas - https://www.mongodb.com/ for the storage and retrieval of non-relational data. 
+
   Materialize CSS - https://materializecss.com/ Used for responsiveness and design of site,
-  used to implement responsive header, footer and collapsible menu
+  used to implement responsive header, footer and collapsible menu.
 
-  Free formatter - https://www.freeformatter.com/css-beautifier.html used to beautify CSS3 code
+  Heroku - https://www.heroku.com/ cloud based platform used to deploy the Barbell planner.
 
-  https://blog.hubspot.com/website/css-fade-in for Fade in animation.
+  Free formatter - https://www.freeformatter.com/css-beautifier.html used to beautify CSS3 code.
+
+  W3C markup Validator - https://validator.w3.org/ to check HTML formatting.
+
+  JS Hint - https://jshint.com/ - to test JQuery formatting.
 
   
 
