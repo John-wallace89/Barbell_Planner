@@ -24,7 +24,7 @@
             <!--top nav bar - desktop -->
             <div class="nav-wrapper">
                 <img src="{{ url_for('static', filename='/images/barbell_logo.jpeg') }}" alt="Barbell Logo"
-                style="max-height: 100px; max-width: 100px; text-align: center;">
+                    style="max-height: 100px; max-width: 100px; text-align: center;">
                 <a href="{{ url_for('home')}}" class="brand-logo center-align">The Barbell Planner</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
@@ -44,8 +44,8 @@
         <ul class="sidenav" id="mobile-demo">
             <img src="{{ url_for('static', filename='images/barbell_logo.jpeg') }}" alt="Barbell Logo"
                 style="max-width: 100%; text-align: center;">
-            {% if session.user %}
             <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('get_workouts', username=session['user']) }}">Barbell Workouts</a></li>
             <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -80,12 +80,12 @@
                 <div class="col s12 center-align social-links content-txt">
                     <h4 class="white-text">Social Links</h4>
                     <ul>
-                        <li><a href="https://www.instagram.com/the_barbell_gym/?hl=en"
-                                target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/GavinSmithFit/"
-                                target="_blank"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/barbell.gear/?hl=en-gb"
-                                target="_blank">Barbell Gear</a></li>
+                        <li><a href="https://www.instagram.com/the_barbell_gym/?hl=en" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/GavinSmithFit/" target="_blank"><i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/barbell.gear/?hl=en-gb" target="_blank">Barbell Gear</a>
+                        </li>
                     </ul>
                 </div>
             </div>
