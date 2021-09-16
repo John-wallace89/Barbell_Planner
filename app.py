@@ -36,7 +36,7 @@ def login():
         if existing_member:
             # ensure password matched username
             if check_password_hash(
-                existing_member["password"], request.form.get("password")):
+               existing_member["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
@@ -164,13 +164,13 @@ def delete_workout(workout_id):
 
 # 404 error redirect
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found_404(e):
     return render_template('404.html'), 404
 
 
 # 500 error redirect
 @app.errorhandler(500)
-def page_not_found(e):
+def page_not_found_500(e):
     return render_template('500.html'), 500
 
 

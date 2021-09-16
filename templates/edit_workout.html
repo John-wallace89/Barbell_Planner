@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <select id="exercise_type" name="exercise_type" class="validate" required>
-                                <option value="" disabled selected>Choose workout type</option>
+                                <option value="" disabled>Choose workout type</option>
                                 {% for exercise in exercises %}
                                     {% if exercise.exercise_type == workout.exercise_type %}
                                         <option value="{{ exercise.exercise_type }}" selected>{{ exercise.exercise_type }}</option>

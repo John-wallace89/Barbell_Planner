@@ -94,11 +94,15 @@ there were no syntax errors.
 
 * [W3C Markup validator](https://validator.w3.org/#validate_by_input)
 1 Error - "The select element cannot have more than one selected option descendant unless the multiple attribute is specified."
-Select element is required in order to pull through the selected data from when a workout is initially logged.
+Fix - removed additional selected attribute. No Errors returned after fix was applied.
 
 * [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator) No errors were returned from the CSS validator.
 
 * [JSHint](https://jshint.com/) No errors were returned from the JS validator.
+
+* [PEP8 online](http://pep8online.com/checkresult)
+1 Error - "continuation line with same indent as next logical line"
+Fix - deleted offending space in app.py file. No errors returned once fix was applied.
 
 ### Testing user stories ###
 
