@@ -200,7 +200,11 @@ Once I have clicked on delete, I am presnted with another message if deleted suc
 
 
 * Potential enhancements:
-
+    i. At the log workout stage, there could be some Javascript added so when either 'Cardio' or 'Weight'
+    option is selected, the input fields change.
+    ii. Additional defensive programming prompting user for confirmation when entering a new password,
+    or deleting a workout.
+    iii. The option to duplicate the excercises in the log/edit workout pages so users can use multiple excercises. 
 
 <h2 style="text-align: center">Deployment</h2>
 
