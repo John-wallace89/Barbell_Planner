@@ -87,7 +87,7 @@ Python
 
   
 
-<h2 style="text-align: center">Testing</h2>
+### Testing
 
 The W3C Markup Validator, W3C CSS and JSHint Validator Services were used to validate the project pages to ensure
 there were no syntax errors.
@@ -209,25 +209,62 @@ Once I have clicked on delete, I am presnted with another message if deleted suc
 <h2 style="text-align: center">Deployment</h2>
 
 ### GitHub Pages ###
-The project was deployed to GitHub Pages using the following steps...
+The project was created through GitHub using the following steps...
 
 #### Log in to GitHub and locate the GitHub Repository ####
 
-* At the top of the repository section, locate the "Settings" Button on the menu.
-* Scroll down the settings page until you find the "GitHub Pages" section.
-* You will see a message "Pages settings now has its own dedicated tab! Check it out here!" click on the link.
-* Under "Source", click the dropdown and select "Master Branch".The page will refresh.
-* The now published site link in the "GitHub Pages" section will be found at the top of the page.
+* Going to [github.com](https://github.com)
+* Clicking on the 'New' button in repositories section
+* Selecting the CI template provided by Code Institute [template here](https://github.com/Code-Institute-Org/gitpod-full-template)
+* Creating a name for my new repo and clicking on the 'Create Repository' buttong at the bottom of the screen.
+* Once directed to my new repo, I clicked on the 'Gitpod' button which created my workspace
 
-### Forking the GitHub Repository ###
+### Deployment to Heroku
+
+**Create application:**
+* Navigate to Heroku.com and login.
+* Click on the new button.
+* Select create new app.
+* Enter the app name - this should be the same as the repo name to reduce complexity.
+* Select region.
+
+**Connect to Github Repo:**
+
+* Click the deploy tab and select GitHub - Connect to GitHub.
+* A prompt to find a github repository to connect to will then be displayed.
+* Enter the repo name for your project in Github and click search.
+* Once the repo has been found, click the connect button.
+
+**Set environment variables:**
+
+Go to the 'Settings' section at the far right of the menu and click 'Reveal Config Vars' button, for my project I added:
+
+1. key: IP, value: 0.0.0.0
+2. key: PORT, value: 5000
+3. key: MONGO_DBNAME, value: (database name you want to connect to)
+4. key: MONGO_URI, value: (mongo uri - This can be found in MongoDB Atlas > clusters > connect > connect to your application and substituting the password and 
+    dbname that you set up in the link).
+5. key: SECRET_KEY, value: (This is a custom key set up for configuration to keep user sessions secure).
+
+**Enable automatic deployment:**
+* Go to 'Deploy' section
+* In the 'Automatic Deploys' section, I chose the main branch (choose the branch you want to deploy from) then click 'Enable Automation Deploys'.
+
+**Forking the GitHub Repository**
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-#### Log in to GitHub and locate the GitHub Repository ####
+* Log in to GitHub and locate the GitHub Repository**
 
 * At the top of the repository section just above the "Settings" button on the menu, click the "Fork" button.
   The original repository in your GitHub account should now have duplicated.
 
-#### Making a Local Clone ####
+### Run on Local Environment
+
+*The project will not run locally with db connections unless the user sets up an [env.py](https://pypi.org/project/env.py/) file configuring IP, PORT, 
+MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in order to do this. These details are hidden and not shared in this repository 
+for security.*
+
+### Making a Local Clone
 
 * Log in to GitHub and locate the GitHub repository, under the repository name, click "clone or download".
 * To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
@@ -243,21 +280,26 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
 
+Once the project has been loaded into an IDE of choice, run the following command in the shell to install all the required packages:
+> pip install -r requirements.txt
+
+
 <h2 style="text-align: center">Credits</h2>
 
 ### Code ###
 
-w3Schools.com to help with some of the syntax of the Js.
-
-Email.js for the contact us email functionality.
+All credits for code are found in CSS or HTML files.
+W3Schools for sense checking
 
 ### Content ###
 
 All typed content was written by the developer.
 
-### Media ###
-
 #### Image credits ####
+* All Images were provided by the Product Owner, Gavin Smith and the Barbell Gym with the exception
+of the background image was taken from Raw Pixel.
 
 ### Acknowledgements ###
 Thanks to Aaron my mentor, for advice on my project and the Code Institute Slack community.
+Gavin Smith and the Barbell Gym for trusting me with their brand and letting me use it for this
+project.
