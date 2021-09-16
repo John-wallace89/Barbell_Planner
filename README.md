@@ -70,6 +70,8 @@ Python
 
   https://fonts.google.com/ - used for font design.
 
+  https://www.rawpixel.com/image/2337562/free-illustration-png-frame-black-texture - Used for background image.
+
   Flask App - https://flask.palletsprojects.com/en/2.0.x/ to run site on and use of Jinja templating and Werkzeug functionality. 
 
   MongoDB Atlas - https://www.mongodb.com/ for the storage and retrieval of non-relational data. 
