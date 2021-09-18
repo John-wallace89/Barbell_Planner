@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
 # Login
@@ -31,7 +31,7 @@ def login():
     if request.method == "POST":
         # check username exists
         existing_member = mongo.db.users.find_one(
-            {'username': request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()})
 
         if existing_member:
             # ensure password matched username
@@ -75,7 +75,7 @@ def register():
     if request.method == "POST":
         # check username
         existing_member = mongo.db.users.find_one(
-            {'username': request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()})
 
         if existing_member:
             flash("Username already exists!")
@@ -165,13 +165,13 @@ def delete_workout(workout_id):
 # 404 error redirect
 @app.errorhandler(404)
 def page_not_found_404(e):
-    return render_template('404.html'), 404
+    return render_template("404.html"), 404
 
 
 # 500 error redirect
 @app.errorhandler(500)
 def page_not_found_500(e):
-    return render_template('500.html'), 500
+    return render_template("500.html"), 500
 
 
 if __name__ == "__main__":
