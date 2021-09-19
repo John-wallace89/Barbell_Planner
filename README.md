@@ -47,7 +47,11 @@ feel of the brand.
 from the gym and classes to provide an insight to users of what the gym looks like, can be seen throughout various pages of the site.
 
 * WireFrames:
-Desktop and Mobile wireframes - https://marvelapp.com/prototype/5d24b2d
+Desktop and Mobile wireframes - [https://marvelapp.com/prototype/5d24b2d]
+
+* Entity relationship diagram
+
+![Barbell planner db diagram](static/images/screenshots/barbell_planner_db_diagram.png)
 
 * Features:
 Responsive layout on mobile and tablet,
@@ -86,6 +90,8 @@ Python
   W3C markup Validator - https://validator.w3.org/ to check HTML formatting.
 
   JS Hint - https://jshint.com/ - to test JQuery formatting.
+
+  db diagram - https://dbdiagram.io/ - to create entity relationship diagram
 
   
 
@@ -146,6 +152,7 @@ There is a clear prompt to provide a username and password.
 Given I have submitted the appropriate details, i am provided with a success message if I have successfully registered.
 * User Story 10 - As a user, I am informed if I have entered invalid data into a field:
 If I have entered wrong information into the registration fields, I am shown an error message.
+
 ![registration success screenshot](static/images/screenshots/successful_registration_message.JPG)
 ![register error screenshot](static/images/screenshots/register_error_1a.JPG)
 ![register error screenshot](static/images/screenshots/register_error.JPG)
@@ -156,6 +163,7 @@ The password hash method is used through Werkzeug.
 
 * User Story 13 - As a user, I can see a clear call to action to log a workout when I have logged in:
 Once logged in I can access the 'Log a workout' page by clicking on the carousel or on the nav bar.
+
 ![log workout carousel screenshot](static/images/screenshots/log_workout_carousel.JPG)
 ![log workout nav Edge screenshot](static/images/screenshots/log_workout_nav.JPG)
 
@@ -164,6 +172,7 @@ Once logged in, the option to log out is available in the nav bar at any point i
 
 * User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout:
 When logging a workout, I can see a switch that will let me indicate whether the workout is a 'cardio' or 'Weights' workout.
+
 ![log workout page screenshot](static/images/screenshots/log_workout_page.JPG)
 
 * User Story 16 & 17 (UPDATED) - When I log my workout, I can clearly see which type of workout it is, either 'Cardio' or 'Weights':
@@ -174,6 +183,7 @@ and I am presnted with an success message:
 When I have successfully logged a workout, I am directed back to the Barbell workouts page and presented with a success message. 
 * User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged:
 My workouts are clearly identified with an icon and I can only edit, or delete workouts I have logged.
+
 ![user workout pixel 2 screenshot](static/images/screenshots/barbell_workouts_pixel2.JPG)
 ![user workout open with icon screenshot](static/images/screenshots/barbell_workouts_open_icon.JPG)
 ![logged workout success screenshot](static/images/screenshots/log_workout_success.JPG)
@@ -182,15 +192,19 @@ My workouts are clearly identified with an icon and I can only edit, or delete w
 * User Story - 20 - As a User, I can Read, Update and Delete the work out I have created:
 Given I have logged a workout, I can edit that workout by clicking on 'Edit'. This takes me to the
 Edit workout page.
+
 ![edit workout screenshot](static/images/screenshots/edit_workout_page.JPG)
 Once I have made relevant changes to my workout, I can either click on 'Cancel' to go back without
 submitting my changes, or 'Edit' to submit my changes. I then see a message to see I have successfully
 edited my workout.
+
 ![edit workout success screenshot](static/images/screenshots/edit_successful.JPG)
 If I attempt to edit a workout that isn't mine, Iam presented with an error.
+
 ![edit workout success screenshot](static/images/screenshots/unauthorised_edit.JPG)
 I can then search for my workout, by name or date, access my workout, or I can delete my workout.
 Once I have clicked on delete, I am presnted with another message if deleted successfully.
+
 ![delete workout success screenshot](static/images/screenshots/edit_successful.JPG)
 
 
