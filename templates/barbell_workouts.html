@@ -6,6 +6,7 @@
 
         <div class="row auth-card">
             <h3 class="center-align content-title">Barbell Workouts</h3>
+            <!-- Search -->
             <form action="{{ url_for('search') }}" method="post" class="col s12">
                 <div class="row valign-wrappers center-align">
                     <div class="input-field col s12 m8">
@@ -24,6 +25,7 @@
             </form>
         </div>
 
+        <!-- List of barbell workouts -->
         {% if workouts|length > 0 %}
             <ul class="collapsible content-txt">
             {% for workout in workouts %}
@@ -60,6 +62,7 @@
                 </li>
             {% endfor %}
             </ul>
+        <!-- If search returns no workouts -->
         {% else %}
             <h3 class="center-align content-title white-text auth-card">No workouts Found</h3>
         {% endif %}

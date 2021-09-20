@@ -103,7 +103,7 @@
                             <p><em>Logged by: {{ workout.created_by }}</em></p>
                         </div>
                     </div>
-                    <!--Submit button-->
+                    <!-- Edit/submit button-->
                     <div class="row">
                         <div class="col s12 center-align">
                             <a href="{{ url_for ('get_workouts') }}" class="btn-large red darken-4 content-txt">Cancel<i
@@ -114,6 +114,7 @@
                         </div>
                     </div>
                 </form>
+            <!-- If user tries to edit an workout they have not created -->
             {% else %}
                 <div class="row">
                     <div class="col s12 content-txt center-align">
