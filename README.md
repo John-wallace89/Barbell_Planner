@@ -2,10 +2,7 @@
 
 ![hero image screenshot](static/images/barbell_responsive.JPG)
 
-This is my submission for Milestone project 3. The Barbell Planner is a fitness based application allowing the user
-to log either a cardio or weights based workout. The user will be able to authenticate themself, log a workout, and then Read, Update or Delete
-that workout from the list they have created. The application will also allow them to navigate to the Barbell gym site
-and Social Media channels.
+This is my submission for Milestone project 3 for Code Institute. The Barbell Planner is a fitness based application allowing the user to log either a cardio or weights based workout. The user will be able to authenticate themself, log a workout, and then read, update or delete that workout. The application will also allow them to navigate to the business' social media channels.
 
 Live project: [https://barbell-planner.herokuapp.com/]
 
@@ -15,7 +12,7 @@ Live project: [https://barbell-planner.herokuapp.com/]
 * User Story 2  - As a user, I can easily navigate through the dashboard.
 * User Story 3 - As a user, there is a clear call to action to login/Register.
 * User Story 4 - As a user, given I havn't registered, there is a clear option for me to register as a user of the planner.
-* User Story 5 - As a user I can access the business social media channels from anywhere on the site.
+* User Story 5 - As a user I can access the business' social media channels from anywhere on the site.
 * User Story 6 - As an admin, I can limit the the navigation options presented to the user if they have not yet logged in.
 * User Story 7 - As a new user, I can navigate to the registration page easily
 * User Story 8 - As a user, There is a clear call to action on what details I must input into the registration fields
@@ -25,16 +22,16 @@ Live project: [https://barbell-planner.herokuapp.com/]
 * User Story 12 - As a user, given I have logged in, I can see a navigation bar giving me clear options that are not present to me when i'm logged out
 * User Story 13 - As a user, I can see a clear call to action to log a workout when I have logged in
 * User Story 14 - As a user, given I have logged in, I can logout at any point in the site
-* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout
+* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' workout or a 'Weights' based workout
 * User Story 16 - As a user when I select 'Weight' workout, I am asked for the name, reps and weight used in my workout and the date
 * User Story 17 - As a user, When I select 'Cardio', I am asked for the exercise name, duration and date.
 UPDATE - functionality changed for User stories 16 and 17, all above options are provided and are restricted when displayed in the
 'Barbell Workouts' page.
-* User Story 18 - As a user when I click on 'Log Workout' the workout then shows on the 'My Workout section of the site.
-UPDATE - logged workouts are stored in 'Barbell workouts' section.
+* User Story 18 - As a user when I click on 'Log Workout' the workout then shows on the 'My Workout' section of the site.
+UPDATE - logged workouts are stored in 'Barbell Workouts' section.
 * User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged.
 UPDATE - logged workouts are stored in 'Barbell workouts' section.
-* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created.
+* User Story - 20 - As a user, I can read, update and delete the workout I have created.
 
 ### Design ###
 
@@ -53,7 +50,7 @@ Desktop and Mobile wireframes - [https://marvelapp.com/prototype/5d24b2d]
 
 ![Barbell planner db diagram](static/images/screenshots/barbell_planner_db_diagram.png)
 
-There are 3 collection set up in MongoDB Atlas
+There are 3 collections set up in MongoDB Atlas
     
     Users
     Exercises
@@ -64,11 +61,11 @@ which is stored in the 'users' collection. It also calls on 'users' collection t
 Werkzeug to check the input against the existing password. Once logged in user is provided with a session ID.
 * The get_workouts function pulls through from the 'workouts' collection and displayed in a collapsible menu on the page. Edit and delete options are only shown
 to users where the username, stored in 'users' collection and contained in the sessionID, equals the 'created_by' value stored in the 'workouts' collection.
-* The search function, queries the list of inputs in the 'workouts' collection for 'workout_name', 'date' and 'exercise_type',
+* The search function queries the list of inputs in the 'workouts' collection for 'workout_name', 'date' and 'exercise_type',
 and returns results based on the input of the user.
 * The log workout functionality provides a form for the user to input various fields (see image above) including selecting 'exercise_type' from the dropdown menu,
 stored in the 'exercises' collection, which is then submitted as 'exercise_type' along with other fields (see image above) in the 'workouts' collection. When the user
-chooses to log a workout, the function inserts the new document into the 'workouts' collection, and provides each document with an ObjectId, and pulls the 'username' value
+chooses to log a workout, the function inserts the new document into the 'workouts' collection, and provides each document with an ObjectID, and pulls the 'username' value
 stored in the 'users' collection into the 'created_by' value.
 * When the user chooses to edit the logged workout, the edit function calls the ObjectID from the 'workouts' collection and displays the document to the user with the values
 the user initially input when logging a workout. If the user makes any changes, the edit function updates the appropriate fields in the document against that specific ID. If
@@ -76,12 +73,12 @@ the username stored in the sessionID does not match the value for 'created_by', 
 * The delete function targets the ObjectID for a document in the 'workouts' collection and removes it from the collection.
 
 * Features:
-Responsive layout on mobile and tablet,
-Collapsible Nav bar for mobile view,
-Collapsible menu for displaying logged workouts,
-Authentication (Login/Register functionality),
-Search,
-Defensive programming
+    * Responsive layout on mobile and tablet
+    * Collapsible nav bar for mobile view
+    * Collapsible menu for displaying logged workouts
+    * Authentication (Login/Register functionality)
+    * Search
+    * Defensive programming
 
 ### Technologies: ###
 
@@ -138,11 +135,11 @@ Fix - deleted offending space in app.py file. No errors returned once fix was ap
 
 * User Story 1 - As a user, I land on the dashboard and it is clear what the site is and it's purpose:
 There is a clear page title under a clear navigation bar providing different navigation options at this stage on the site.
-This is followed clear instructions prompting the user to either register or login to progress.
+This is followed by clear instructions prompting the user to either register or login to progress.
 * User Story 2  - As a user, I can easily navigate through the dashboard:
 The Nav bar is clearly presented at the top of the screen, and the menu collapses into a burger menu on smaller screen sizes
 to improve usability and appearance.
-* User Story 3 - As a user, there is a clear call to action to login/Register:
+* User Story 3 - As a user, there is a clear call to action to login/register:
 Options to either register or login are provided on a carousel to direct each user to their chosen page.
 ![Dashboard screenshot](static/images/screenshots/logged_out_dashboard.JPG)
 ![Dashboard screenshot mob](static/images/screenshots/logged_out_dashboard_mob.JPG)
@@ -192,18 +189,18 @@ Once logged in I can access the 'Log a workout' page by clicking on the carousel
 * User Story 14 - As a user, given I have logged in, I can logout at any point in the site:
 Once logged in, the option to log out is available in the nav bar at any point in the customer journey.
 
-* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' Workout or a 'Weights' based workout:
-When logging a workout, I can see a switch that will let me indicate whether the workout is a 'cardio' or 'Weights' workout.
+* User Story 15 - As a user, When I log a workout I have the choice to pick either a 'Cardio' workout or a 'Weights' based workout:
+When logging a workout, I can see a switch that will let me indicate whether the workout is a 'Cardio' or 'Weights' workout.
 
 ![log workout page screenshot](static/images/screenshots/log_workout_page.JPG)
 
 * User Story 16 & 17 (UPDATED) - When I log my workout, I can clearly see which type of workout it is, either 'Cardio' or 'Weights':
 Given I have logged a workout, my workout will appear in the list in the 'Barbell workouts' page. I can clearly see which workouts are mine
-and when I click on my workouts I am presented with an icon/tooltip that let's me know the type of workout it is.
+and when I click on my workouts I am presented with an icon/tooltip that lets me know the type of workout it is.
 * User Story 18- UPDATED - As a user when I click on 'Log Workout' the workout then shows on the 'Barbell workouts' section of the site,
-and I am presnted with an success message:
+and I am presented with an success message:
 When I have successfully logged a workout, I am directed back to the Barbell workouts page and presented with a success message. 
-* User Story 19 - As a user, When I navigate to the My Workouts section, I can see the workouts that I have logged:
+* User Story 19 - As a user, When I navigate to the Barbell Workouts section, I can see the workouts that I have logged:
 My workouts are clearly identified with an icon and I can only edit, or delete workouts I have logged.
 
 ![user workout pixel 2 screenshot](static/images/screenshots/barbell_workouts_pixel2.JPG)
@@ -211,9 +208,9 @@ My workouts are clearly identified with an icon and I can only edit, or delete w
 ![logged workout success screenshot](static/images/screenshots/log_workout_success.JPG)
 ![workout in barbell workouts page screenshot](static/images/screenshots/workout_logged.JPG)
 
-* User Story - 20 - As a User, I can Read, Update and Delete the work out I have created:
+* User Story - 20 - As a User, I can read, update and delete the work out I have created:
 Given I have logged a workout, I can edit that workout by clicking on 'Edit'. This takes me to the
-Edit workout page.
+edit workout page.
 
 ![edit workout screenshot](static/images/screenshots/edit_workout_page.JPG)
 Once I have made relevant changes to my workout, I can either click on 'Cancel' to go back without
@@ -221,7 +218,7 @@ submitting my changes, or 'Edit' to submit my changes. I then see a message to s
 edited my workout.
 
 ![edit workout success screenshot](static/images/screenshots/edit_successful.JPG)
-If I attempt to edit a workout that isn't mine, Iam presented with an error.
+If I attempt to edit a workout that isn't mine, I am presented with an error.
 
 ![edit workout success screenshot](static/images/screenshots/unauthorised_edit.JPG)
 I can then search for my workout, by name or date, access my workout, or I can delete my workout.
@@ -258,7 +255,7 @@ The project was created through GitHub using the following steps...
 * Going to [github.com](https://github.com)
 * Clicking on the 'New' button in repositories section
 * Selecting the CI template provided by Code Institute [template here](https://github.com/Code-Institute-Org/gitpod-full-template)
-* Creating a name for my new repo and clicking on the 'Create Repository' buttong at the bottom of the screen.
+* Creating a name for my new repo and clicking on the 'Create Repository' button at the bottom of the screen.
 * Once directed to my new repo, I clicked on the 'Gitpod' button which created my workspace
 
 ### Deployment to Heroku
@@ -293,6 +290,7 @@ Go to the 'Settings' section at the far right of the menu and click 'Reveal Conf
 * In the 'Automatic Deploys' section, I chose the main branch (choose the branch you want to deploy from) then click 'Enable Automation Deploys'.
 
 **Forking the GitHub Repository**
+
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
 * Log in to GitHub and locate the GitHub Repository**
@@ -300,13 +298,13 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 * At the top of the repository section just above the "Settings" button on the menu, click the "Fork" button.
   The original repository in your GitHub account should now have duplicated.
 
-### Run on Local Environment
+**Run on Local Environment**
 
-*The project will not run locally with db connections unless the user sets up an [env.py](https://pypi.org/project/env.py/) file configuring IP, PORT, 
+* The project will not run locally with db connections unless the user sets up an [env.py](https://pypi.org/project/env.py/) file configuring IP, PORT, 
 MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in order to do this. These details are hidden and not shared in this repository 
 for security.*
 
-### Making a Local Clone
+**Making a Local Clone**
 
 * Log in to GitHub and locate the GitHub repository, under the repository name, click "clone or download".
 * To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
@@ -326,7 +324,7 @@ Once the project has been loaded into an IDE of choice, run the following comman
 > pip install -r requirements.txt
 
 
-<h2 style="text-align: center">Credits</h2>
+### Credits
 
 ### Code ###
 
@@ -342,6 +340,6 @@ All typed content was written by the developer.
 of the background image was taken from Raw Pixel.
 
 ### Acknowledgements ###
-Thanks to Aaron my mentor, for advice on my project and the Code Institute Slack community.
+Thanks to Aaron my mentor for advice on my project, the Code Institute Slack community, and
 Gavin Smith and the Barbell Gym for trusting me with their brand and letting me use it for this
 project.
