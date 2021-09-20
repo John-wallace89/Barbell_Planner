@@ -53,6 +53,28 @@ Desktop and Mobile wireframes - [https://marvelapp.com/prototype/5d24b2d]
 
 ![Barbell planner db diagram](static/images/screenshots/barbell_planner_db_diagram.png)
 
+There are 3 collection set up in MongoDB Atlas
+    
+    Users
+    Exercises
+    Workouts
+* The registration function asks the user to input and submit a unique username and password (which is hashed using the Werkzeug generate_password_hash)
+which is stored in the 'users' collection. It also calls on 'users' collection to check if a username already exists, and if so, it shows an error.
+* The login function asks the user to submit the username and hashed password from the 'users' collection, and uses check_password_hash feature from
+Werkzeug to check the input against the existing password. Once logged in user is provided with a session ID.
+* The get_workouts function pulls through from the 'workouts' collection and displayed in a collapsible menu on the page. Edit and delete options are only shown
+to users where the username, stored in 'users' collection and contained in the sessionID, equals the 'created_by' value stored in the 'workouts' collection.
+* The search function, queries the list of inputs in the 'workouts' collection for 'workout_name', 'date' and 'exercise_type',
+and returns results based on the input of the user.
+* The log workout functionality provides a form for the user to input various fields (see image above) including selecting 'exercise_type' from the dropdown menu,
+stored in the 'exercises' collection, which is then submitted as 'exercise_type' along with other fields (see image above) in the 'workouts' collection. When the user
+chooses to log a workout, the function inserts the new document into the 'workouts' collection, and provides each document with an ObjectId, and pulls the 'username' value
+stored in the 'users' collection into the 'created_by' value.
+* When the user chooses to edit the logged workout, the edit function calls the ObjectID from the 'workouts' collection and displays the document to the user with the values
+the user initially input when logging a workout. If the user makes any changes, the edit function updates the appropriate fields in the document against that specific ID. If
+the username stored in the sessionID does not match the value for 'created_by', an error is shown to the user to prevent them from editing the workout.
+* The delete function targets the ObjectID for a document in the 'workouts' collection and removes it from the collection.
+
 * Features:
 Responsive layout on mobile and tablet,
 Collapsible Nav bar for mobile view,
